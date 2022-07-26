@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Type conversion and coersion in java script</h1>
+    <p>
+      type conversion is do change one type to another type manually is type
+      conversion. type coersion is automatically.
+    </p>
+    <script>
+      // input is almost string in js
+      let inputYear = "2002";
+      let total_age = inputYear + 2022;
+      console.log(total_age);
+      // type conversion
+      total_age = Number("2002") + 12;
+      console.log(total_age);
+      // example 2
+      let urduMarks = "23";
+      let Eng = "45";
+      let phy = "34";
+      let total = urduMarks + Eng + phy;
+      console.log(total);
+
+      total = Number(urduMarks) + Number(Eng) + Number(phy);
+      console.log(total);
+      //
+      // let Expence1 = Number(prompt("Enter your Expence 1"));
+      // let Expence2 = Number(prompt("Enter your Expence 2"));
+      // let Expence3 = Number(prompt("Enter your Expence 3"));
+      // let totalBill = Expence1 + Expence2 + Expence3;
+      // console.log(`The totL BILL IS ${totalBill}`);
+
+      // Not a number invalidnumber
+      // let notaNumber = Number(prompt("Enter number"));
+
+      // console.log(notaNumber);
+
+      // string from number
+      let num1 = 12;
+
+      let num2 = String(num1);
+      total += num1;
+      console.log(total);
+      console.log(num2);
+
+      // type coersion
+      console.log("10" + "23" + 234);
+      console.log("12" - "23" - 34);
+
+      let n = "1" + 1;
+      n -= 1;
+      console.log(n);
+    </script>
+  </body>
+</html>

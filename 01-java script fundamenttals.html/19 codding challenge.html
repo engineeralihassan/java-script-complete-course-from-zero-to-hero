@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>codding challenge # 4</h1>
+
+    <script>
+      let bill = Number(prompt("Enter you total bill"));
+      let tip;
+
+      if (bill >= 50 && bill <= 300) {
+        tip = (15 / bill) * 100;
+        totalbill = bill + tip;
+        console.log(`The  bill is : ${bill}
+         and tipp is : ${tip}
+         and the total bill now : ${totalbill}`);
+      } else {
+        tip = (20 / bill) * 100;
+        totalbill = bill + tip;
+        console.log(`The  bill is : ${bill}
+         and tipp is : ${tip}
+         and the total bill now : ${totalbill}`);
+      }
+    </script>
+  </body>
+</html>

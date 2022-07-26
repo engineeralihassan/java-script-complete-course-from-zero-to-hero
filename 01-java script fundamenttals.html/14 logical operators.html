@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>logical operatprs in java sript</h1>
+    <p>
+      And Not OR is used to solve the complex logical problems in java script
+    </p>
+    <script>
+      let score = 10;
+      let numberGame = 4;
+      if (numberGame >= 7 && numberGame <= 9) {
+        console.log("DAimond win");
+        score--;
+        console.log(score);
+      } else if (numberGame >= 6 && numberGame <= 7) {
+        console.log("Gold  win");
+        score--;
+        console.log(score);
+      } else if (numberGame >= 4 && numberGame <= 5) {
+        console.log("silver  win");
+        score--;
+        console.log(score);
+      } else if (numberGame >= 1 && numberGame <= 3) {
+        console.log("Simple   win");
+        score--;
+        console.log(score);
+      } else if (numberGame <= 0) {
+        console.log("you lose the game");
+        score--;
+        console.log(score);
+      }
+
+      // or operators
+
+      let gotAdmition = false;
+      let fsc = true;
+      let ics = true;
+      let medical;
+
+      if (fsc && medical) {
+        console.log("You are able to got admition in MBBS");
+      } else if (fsc) {
+        console.log("you are got addmition in Softwere enginnering");
+      }
+
+      // example
+      let retired = false;
+      let pentionar = false;
+      let birthYear = Number(prompt("Enter Birth Year"));
+      let currentYear = Number(prompt("Enter current Year"));
+      let age = currentYear - birthYear;
+
+      if (age === 60) {
+        retired = true;
+        console.log("This is yuor retirement Year");
+      } else if (age < 60) {
+        console.log(`you have left the ${60 - age} year in retirement`);
+      } else if (age > 60 && age <= 80) {
+        console.log(`you are retired from last ${age - 60}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if Else statements</title>
+  </head>
+  <body>
+    <h1>if Else statements in Java script</h1>
+    <p>conditional statements are the if else statements .</p>
+    <script>
+      let age = 18;
+      let isOldEnough = age >= 18;
+      if (isOldEnough) {
+        console.log("Ali You are able to vote");
+      } else {
+        console.log(`Hello Ali Sorry 😥 you waite ${18 - age} more Years to 
+       get driving licence`);
+      }
+      let birthYear = 2002;
+      let century;
+      if (birthYear <= 2000) {
+        century = 20;
+
+        console.log(`Hello Ali you are born in  ${century} `);
+      } else {
+        century = 21;
+        console.log(`Hello Ali you are born in  ${century} `);
+      }
+      // example
+      let vote = false;
+      if (century === 21) {
+        console.log(`Hello ali you are able to vote`);
+      } else {
+        console.log(`Hello ali you are not  able to vote`);
+      }
+
+      if (!vote) {
+        console.log(`Hello ali your Vote is activated `);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Equality operators in java script</h1>
+    <p>Equality operators in java script is ==== ,== ,=</p>
+    <script>
+      // Equality operators
+      // assignment operstors
+      let age = 20;
+      let marks = "20";
+      if (age == marks) {
+        console.log("This is the fualt of the double equal sign bug");
+      } else {
+        console.log("This is not equal");
+      }
+      // ===
+      if (age === marks) {
+        console.log("This is the fualt of the double equal sign bug");
+      } else {
+        console.log("This is not equal");
+      }
+      // ==
+      // let money = 2000 + 22;
+      // let year = prompt("Enter current year");
+      // if (money == year) {
+      //   console.log("congratulations you win lotery");
+      // } else {
+      //   console.log("it is not equal in values");
+      // }
+      // // ===\
+      // let money1 = 2000 + 22;
+      // let year1 = prompt("Enter current year");
+      // if (money1 === year1) {
+      //   console.log("congratulations you win lotery");
+      // } else {
+      //   console.log("it is not equal in values");
+      // }
+
+      // if else else if statements
+      let score = 10;
+      let numberGame = Number(prompt("Enter your number"));
+      if (numberGame === 9) {
+        console.log("DAimond win");
+        score--;
+        console.log(score);
+      } else if (numberGame === 6) {
+        console.log("Gold  win");
+        score--;
+        console.log(score);
+      } else if (numberGame === 2) {
+        console.log("silver  win");
+        score--;
+        console.log(score);
+      } else if (numberGame === 1) {
+        console.log("Simple   win");
+        score--;
+        console.log(score);
+      } else if (numberGame <= 0) {
+        console.log("you lose the game");
+        score--;
+        console.log(score);
+      }
+    </script>
+  </body>
+</html>

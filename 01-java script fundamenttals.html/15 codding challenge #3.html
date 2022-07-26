@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>coding challenge #3</h1></center>
+    <script>
+      let unitedmatch1 = Number(prompt("Enter Match 1 score"));
+      let unitedmatch2 = Number(prompt("Enter Match 2 score"));
+      let unitedmatch3 = Number(prompt("Enter Match 3 score"));
+      // ggg
+      let youngdmatch1 = Number(prompt("Enter Match 1 score"));
+      let youngdmatch2 = Number(prompt("Enter Match 2 score"));
+      let youngdmatch3 = Number(prompt("Enter Match 3 score"));
+
+      let unitedaverage = (unitedmatch1 + unitedmatch2 + unitedmatch3) / 3;
+      let youngaverage = (youngdmatch1 + youngdmatch2 + youngdmatch3) / 3;
+      if (unitedaverage > youngaverage && unitedaverage >= 100) {
+        console.log(`United CC is won the trophy 🏆`);
+      } else if (unitedaverage < youngaverage && youngaverage >= 100) {
+        console.log(`Young Tiger  CC is won the trophy 🏆`);
+      } else if (
+        unitedaverage === youngaverage &&
+        unitedaverage >= 100 &&
+        youngaverage >= 100
+      ) {
+        console.log(`Series is draw No one is won the trophy 🏆`);
+      } else {
+        console.log("No teams win the trophy");
+      }
+    </script>
+  </body>
+</html>

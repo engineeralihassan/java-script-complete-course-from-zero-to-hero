@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Truthy and Falsy values in js</h1>
+    <p>
+      There are 5 typs of falsy values in java script. the falsy value are also
+      false when we convert in into boleans. 0, empty string ,null undefined
+      ,NAN,
+    </p>
+    <script>
+      // Check falsy values
+      console.log(Boolean(0));
+      console.log(Boolean(""));
+      console.log(Boolean(null));
+      console.log(Boolean(undefined));
+      console.log(Boolean("Ali"));
+      console.log(Boolean("1234"));
+      console.log(Boolean(1234));
+      console.log(Boolean(123 + 4456));
+
+      // Boolean in ifelse
+      let money = 12;
+      if (money) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+      let money1 = 0;
+      if (money1) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+      let money2;
+      if (money2) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+      let money3 = null;
+      if (money3) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+      let money4 = "1234";
+      if (money) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+      let money6 = "0";
+      if (money) {
+        console.log("You net income is mote then 10");
+      } else {
+        console.log("The your net income is Zero 0");
+      }
+    </script>
+  </body>
+</html>
