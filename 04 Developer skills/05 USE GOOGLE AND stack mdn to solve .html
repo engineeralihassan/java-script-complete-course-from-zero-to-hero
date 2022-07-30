@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title></title>
+</head>
+<body>
+      <center>
+            <h1>use Goggle MDn and the <br>
+                   stack overflow to solve a problem</h1>
+      </center>
+      <center><p>we have aproblem in which we want to find the max <br>
+      min temprature from this array</p></center>
+      <script>
+            let temps=[12,34,56,-23,-45,34,-12,9,-1234];
+
+            // understand the problem
+            // divide into sub problems
+            // like how to find min
+            // how to find the min in array
+            // how we write this
+            // subtract this form this
+            let calcTemps=temps=>{
+                  let max=temps[0];
+                  let min=temps[0];
+
+                  for(let i=0;i<temps.length;i++){
+                        if(temps[i]>max){
+                              max=temps[i];
+
+                        }
+                         if(temps[i]<min){
+                              min =temps[i];
+
+                        }
+                  }
+                  console.log(max);
+                  console.log(min);
+                  return max-min;
+                  
+
+
+            }
+            calcTemps(temps);
+            console.log(calcTemps(temps));
+
+
+
+
+      </script>
+            
+      
+</body>
+</html>
