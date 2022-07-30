@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array methods in java script</h1>
+    <script>
+      // array methods in java script
+
+      // add new elements in arrays
+      let friends = ["Ali", "Hassan", "HUsnain", "usman", "usman"];
+      friends.push("Arslan");
+      let newlenght = friends.push("Aslam");
+      console.log(newlenght);
+      console.log(friends);
+      console.log(friends[3]);
+      console.log(friends[1], friends[3], friends[5]);
+
+      // add in the start
+      friends.unshift("Alama");
+      console.log(friends);
+
+      // REmove Elements from arrays
+      // from end remove
+      friends.pop();
+      console.log(friends);
+      friends.pop();
+      console.log(friends);
+      // from start
+      friends.shift();
+      console.log(friends);
+      friends.shift();
+      console.log(friends);
+
+      // let inp = Number(prompt("Enter the number"));
+      // if (inp === 2) {
+      //   let dell = function () {
+      //     let deleted = friends.pop();
+      //     alert("Elemnt is deleted from array" + " " + deleted);
+      //   };
+      //   dell();
+      //   console.log(friends);
+      // }
+
+      // from start
+      let number = [12, 23, 45, 67, 89, 09, 87, 65, 43];
+      console.log(number);
+      let dele = number.shift();
+      console.log(number);
+      console.log(dele);
+
+      // find index
+      console.log(number);
+
+      let index = number.indexOf(67);
+      console.log(index);
+      index = number.indexOf(65);
+      console.log(index);
+      index = number.indexOf(87);
+      console.log(index);
+
+      // includes
+      let inl = number.includes(89);
+      console.log(inl);
+
+      let inp = Number(prompt("Enter the number"));
+      let inp2 = number.includes(inp);
+
+      if (inp2) {
+        let ind = number.indexOf(inp);
+        console.log(`The index of input is : ${ind}`);
+      }
+    </script>
+  </body>
+</html>

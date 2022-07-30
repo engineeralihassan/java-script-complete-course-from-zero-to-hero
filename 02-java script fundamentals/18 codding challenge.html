@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>codding challenge #4</h1>
+    <script>
+      // codding challenge
+      let bills = [27, 295, 179, 440, 37, 105, 10, 86, 52];
+      let tips = [];
+      let totals = [];
+      let tip;
+      let total;
+
+      for (let i = 0; i < bills.length; i++) {
+        let calcetip = function () {
+          if (bills[i] >= 30 && bills[i] < 300) {
+            tip = (15 / bills[i]) * 100;
+            tips.push(tip);
+            total = bills[i] + tip;
+            totals.push(total);
+          } else {
+            tip = (20 / bills[i]) * 100;
+            tips.push(tip);
+            total = bills[i] + tip;
+            totals.push(total);
+          }
+        };
+        calcetip();
+      }
+
+      for (let j = 0; j < bills.length; j++) {
+        console.log(
+          `The ${j} bill : ${bills[j]} tip : ${tips[j]} total : ${totals[j]}  `
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <center><h1>Object methods functions</h1></center>
+  <script>
+    // object methods
+    let ali = {
+      name: "Ali Hassan",
+      location: "chak no 11/1L",
+      class: "BSSE",
+      RollNo: 5063,
+      uni: "University of okara",
+      Friends: ["Ali", "Anas", "Husnain"],
+      calcAgeFunc: function (firstName, location, uni) {
+        console.log(`${firstName} is lived in ${location}
+            and his university is ${uni}`);
+      },
+    };
+    // add properties in object
+    ali.tasks = "Complete ";
+    ali["famlyMembers"] = 8;
+    console.log(ali);
+    let s = "fees";
+    ali[s] = 123;
+    console.log(ali);
+    ali["hasDriverlisence"] = true;
+    console.log(ali);
+    //     function call in object
+    ali.calcAgeFunc(ali.name, ali.location, ali.uni);
+    ali.calcAgeFunc(ali["name"], ali["location"], ali["uni"]);
+    ali["calcAgeFunc"](ali.name, ali.location, ali.uni);
+
+    //     this funcion objects
+    let ali1 = {
+      name: "Ali Raza ",
+      location: "chak no 12/1L",
+      class: "BSSE-A",
+      RollNo: 5083,
+      uni: "University of okara",
+      Friends: ["Ali", "Mortza", "Usama"],
+      birthYear: 2002,
+
+      calcAgeFunc: function () {
+        (this.age = 2022 - this.birthYear), (this.profession = "Student");
+
+        console.log(`${this.name} is lived in ${this.location} .HE IS ${
+          this.age
+        }
+           Years old ${this.profession} and he has 
+           ${
+             this.hasDriverlisence ? " A Driver licence" : "No driver licence"
+           }and his university is ${ali1.uni}`);
+      },
+    };
+    // add properties in object
+    ali1.tasks = "Complete ";
+    ali1["famlyMembers"] = 8;
+    console.log(ali1);
+    let d = "fees";
+    ali1[d] = 123;
+    console.log(ali1);
+    ali1["hasDriverlisence"] = true;
+    console.log(ali1);
+    //     function call in object
+    ali1.calcAgeFunc();
+
+    ali1["calcAgeFunc"]();
+    console.log(ali1.age);
+    console.log(ali1.age);
+    console.log(ali1.age);
+    ali1.calcAgeFunc();
+
+    //     object methds
+  </script>
+  <body></body>
+</html>

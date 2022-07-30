@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bracket vs dot notation</h1>
+    <script>
+      // dot vs bracket notation.
+      let obj = {
+        firstName: "Ali Hassan",
+        class: "BSSE-A",
+        RollNo: 5062,
+        friends: ["Ali", "Hassan", "Anas", "Salman", "Bashir"],
+      };
+      console.log(obj);
+      console.log(obj.RollNo);
+      console.log(obj["class"]);
+
+      // bracket notation
+      let n = "Name";
+      console.log(obj["first" + n]);
+      let n1 = "No";
+
+      console.log(obj["Roll" + n1]);
+
+      let intrested = "class";
+      //   console.log(`Ali Class is : ${obj.intrested}`) //This is error
+      console.log(`Ali Class is : ${obj[intrested]}`);
+
+      let friends = {
+        ans: "Not best friend",
+        husnain: "Not best friend",
+        Allah: "Best friend forever",
+      };
+      let seebestie = prompt(
+        "Choose between them to see my Bestie" + " " + "Allah ,ans ,husnain"
+      );
+      if (friends[seebestie]) {
+        console.log(`He is : ${friends[seebestie]}`);
+      } else {
+        console.log(`He is not in friends list`);
+      }
+      let bestFriend = prompt("Enter best friend name");
+
+      let index = obj.friends.indexOf(bestFriend);
+      console.log(index);
+
+      console.log(obj.friends[index]);
+      // example
+
+      console.log(`${obj.firstName} has ${obj.friends.length} 
+      But his best friend is ${obj.friends[index]} `);
+
+      // Example
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>Function is java script</center>
+    <p>
+      fuctions are fundamental building blocks in java script. piece of code we
+      use again and again in code .we start with fuction keyword then name of
+      function and then () { this is for code function body }
+    </p>
+    <script>
+      // calling //running // invoking
+      function test() {
+        console.log("My fist function in java script for now");
+      }
+      test();
+      test();
+      test();
+      // function are recieve and also return data functions are like machines
+      function recieveData(num1, num2) {
+        let sum = num1 + num2;
+        return `The sum of ${num1} and ${num2} : ${sum}`;
+      }
+      recieveData(12, 34);
+      console.log(recieveData(12, 45));
+      let funccall = recieveData(34, 56);
+      console.log(funccall);
+      // Example 1
+      function resultMarks(eng, urd, isl, math, phy, chem, bio) {
+        let total = eng + urd + isl + math + phy + chem + bio;
+        let percentage = (total / 700) * 100;
+        let average = total / 7;
+        if (average >= 90) {
+          console.log("Yuo are get A+ Grade in exam");
+        } else if (average < 90 && average >= 80) {
+          console.log("Yuo are get A Grade in exam");
+        } else if (average < 80 && average >= 70) {
+          console.log("Yuo are get B Grade in exam");
+        } else if (average < 70 && average >= 60) {
+          console.log("Yuo are get C Grade in exam");
+        }
+
+        if (percentage > 60) {
+          console.log("Hello ali This is amazing");
+          console.log(percentage);
+        } else {
+          console.log("try again inshallah you success");
+        }
+      }
+      let checkresult = resultMarks(60, 78, 89, 67, 23, 67, 80);
+      console.log(checkresult);
+
+      // example #2
+      function myTasks(video, examples, tool, socialMedia, ui, jspro) {
+        let complete = false;
+        if (
+          video === "yes" &&
+          examples === "yes" &&
+          tool === "yes" &&
+          socialMedia === "yes" &&
+          ui === "yes" &&
+          jspro === "yes"
+        ) {
+          console.log(`Congratulation Ali Yuou all Task are complete`);
+        } else {
+          console.log(`Bcarefull your today tasks are not complete 
+            workind more to complete today tasks`);
+        }
+      }
+      let video = prompt("Enter status of your task video");
+      let examples = prompt("Enter status of your task Examples");
+      let tool = prompt("Enter status of your task tool");
+      let socialMedia = prompt("Enter status of your task socialMedia");
+      let ui = prompt("Enter status of your task ui/ux");
+      let jspro = prompt("Enter status of your task js mini project");
+      myTasks(video, examples, tool, socialMedia, ui, jspro);
+    </script>
+  </body>
+</html>

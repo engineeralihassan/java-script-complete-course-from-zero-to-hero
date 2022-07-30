@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Function declarations and Expresions</h1>
+    <p>
+      there are many tye of wtiting function in jva scrit.each type work
+      diffrent way.
+    </p>
+    <script>
+      "use strict";
+      //function declarations
+      function declarations(birtjYear) {
+        let age;
+        let currentYear = Number(prompt("Enter current Year"));
+        age = currentYear - birtjYear;
+        return age;
+      }
+      // let age = declarations(2002);
+      // console.log(age);
+
+      //function  expressions  anonymus functions
+      let age1 = function (birtjYear) {
+        let age;
+        let currentYear = Number(prompt("Enter current Year"));
+        age = currentYear - birtjYear;
+        return age;
+      };
+      let agereal = age1(2002);
+      console.log(agereal);
+      console.log(`The age is: ${age1(2002)}`);
+
+      // main diffrence use before initialization
+      declation2();
+
+      function declation2() {
+        console.log("This function is  clled befor initialization");
+      }
+
+      console.log(expresion2());
+
+      // cannot access
+
+      let expresion2 = function () {
+        console.log(
+          "This function Expresion is not   clled befor initialization"
+        );
+      };
+    </script>
+  </body>
+</html>

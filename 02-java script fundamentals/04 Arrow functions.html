@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Arrow Afunctions in Java script</h1>
+      1
+    </center>
+    <p>
+      this is another type of function writing in java script.its faster to
+      write and short in code.its like the function expresion2
+    </p>
+    <script>
+      let funcExpresion = function (parameter) {
+        console.log("this is function expresion");
+      };
+      let arrowfunc = (para) => console.log("This is Arrow Function");
+
+      arrowfunc();
+      funcExpresion();
+
+      // multi line arrow function
+      let retirementcheck = (birthYear) => {
+        const age = 2022 - birthYear;
+        const terirement = 60 - age;
+        return `Hey MR you have waite ${terirement} years for get Retirement`;
+      };
+      let average = (nm1, num2, num3) => {
+        const aver = num2 + num3 + nm1;
+
+        const average = aver / 3;
+
+        return average;
+      };
+
+      console.log(average(12, 45, 67));
+
+      console.log(retirementcheck(2002));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Loops for loops</h1></center>
+    <script>
+      // for loop running while the condition is true
+      for (let i = 1; i <= 10; i++) {
+        console.log(`2 X ${i} = ${2 * i}`);
+      }
+      //    example
+
+      let ali1 = {
+        name: "Ali Raza ",
+        uni: "University of okara",
+        Friends: [
+          "Ali",
+          "Mortza",
+          "Usama",
+          "sundar",
+          "komal",
+          "fateh ali",
+          "aslam",
+        ],
+
+        calcAgeFunc: function () {
+          (this.age = 2022 - this.birthYear), (this.profession = "Student");
+
+          console.log(`${this.name} is lived in ${this.location} .HE IS ${
+            this.age
+          }
+           Years old ${this.profession} and he has 
+           ${
+             this.hasDriverlisence ? " A Driver licence" : "No driver licence"
+           }and his university is ${ali1.uni}`);
+        },
+
+        newfriends: function () {
+          this.newFriendList = [];
+          for (let i = 0; i < 5; i++) {
+            let ele = this.Friends[i];
+            console.log(ele);
+
+            this.newFriendList.unshift(ele);
+          }
+          console.log("New friends list");
+          console.log(this.newFriendList);
+        },
+      };
+
+      ali1.newfriends();
+    </script>
+  </body>
+</html>

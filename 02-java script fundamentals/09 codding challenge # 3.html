@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Codding challenge # 3</h1></center>
+    <script>
+      let tip = 0;
+
+      let calcTip = (bill) => {
+        if (bill >= 50 && bill <= 300) {
+          tip = (15 / bill) * 100;
+          let total = tip + bill;
+
+          console.log(`The Bill Is ${bill} and tipp  is ${tip}
+                  total is :${total}`);
+          return total;
+        } else {
+          tip = (20 / bill) * 100;
+          let total = tip + bill;
+
+          console.log(`The Bill Is ${bill} and tipp  is ${tip}
+                  total is :${total}`);
+          return total;
+        }
+      };
+
+      let bills = [234, 345, 567];
+      let totals = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+      let totalBill = totals[0] + totals[1] + totals[2];
+      console.log("The total Bill of Family is : " + " " + totalBill);
+    </script>
+  </body>
+</html>

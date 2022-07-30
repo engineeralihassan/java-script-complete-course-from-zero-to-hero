@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Function call inside other function</h1></center>
+    <center>This is the very basic and widely used term in functions</center>
+    <script>
+      let average2 = (sum, number) => {
+        let average = sum / number;
+        return average;
+      };
+      let percentage2 = (total, get) => {
+        let percenage = (get / total) * 100;
+        return percenage;
+      };
+      let Result = function (totalMarks, subject, obtained) {
+        let Name = "Ali Hassan";
+
+        let average1 = average2(obtained, subject);
+        let percentage1 = percentage2(totalMarks, obtained);
+
+        return `${Name} You get ${obtained} Marks out of ${totalMarks} 
+                     Your percentage is ${percentage1} 
+                     your average book marks is: ${average1}
+                     Thanks ! `;
+      };
+      let final = Result(300, 3, 255);
+      console.log(final);
+
+      // Example 2 Ellection
+
+      let perData = function (birthYear) {
+        let name1 = "Ali Hassan";
+        let age = birthYear - 2002;
+        let programe = "BSSE-A";
+        let Vote = age >= 18 ? "Eligible" : " Not Eligible";
+        let party = "PTI ";
+
+        return `Mr ${name1} your age is ${age} Years 
+              so You are ${Vote} for Vote 
+              And your study program is ${programe}
+              and you want like to vote ${party}`;
+      };
+
+      let votingchite = (ide) => {
+        let s = perData(ide);
+        return s;
+      };
+
+      function voteDone(year) {
+        let p = votingchite(year);
+        return p;
+      }
+
+      let ss = voteDone(2022);
+      console.log(ss);
+    </script>
+  </body>
+</html>

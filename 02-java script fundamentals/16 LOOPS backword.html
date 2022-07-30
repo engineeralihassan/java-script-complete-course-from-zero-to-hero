@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Backward looping</h1>
+    <script>
+      // bacward lopps
+      let num = 2;
+      for (let i = 10; i > 0; i--) {
+        console.log(`${num} X ${i} = ${num * i}`);
+      }
+
+      // loops in loops
+      let questions = [
+        "capital of pakistan",
+        "your age",
+        "your class",
+        "sugar rate",
+      ];
+      let ansers = [
+        ["la", "is", "kar", "fais"],
+        [12, 34, 56, 78],
+        ["Bsse", "BScs", "BSit", "Bsds"],
+        [123, 100, 90, 56],
+      ];
+
+      for (let i = 0; i < 4; i++) {
+        console.log("Question #" + i);
+        console.log("What is " + " " + questions[i]);
+        for (let j = 0; j < 4; j++) {
+          console.log(ansers[i][j]);
+        }
+      }
+    </script>
+  </body>
+</html>

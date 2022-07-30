@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Introduction to arrays</h1></center>
+    <script>
+      // arrays
+      let friends = ["Ali Hassan", "BSSE-a", 5063, 5000, "Evening"];
+      console.log(friends);
+      let friends2 = new Array(23, 45, 67, 89, "simplylearn");
+      console.log(friends2);
+      // arrays are 0 based zero
+      console.log(friends[0]);
+      console.log(friends[2]);
+      console.log(friends.length);
+      console.log(`The last Element of arrays ${friends[friends.length - 1]}`);
+      // we also mutate and change the arrays
+      friends[2] = "Allama mohhamad Iqbal";
+      console.log(friends);
+
+      // const changeable in arrays
+      let arr = ["1234", 234, "Ali"];
+      arr = ["1234", "2345", "7890", "34567", "234567890"];
+
+      console.log(arr);
+      //   const  arr1 = ["1234", 234, "Ali"];
+      // arr1 = ["1234", "2345", "7890", "34567", "234567890"];
+
+      // console.log(arr); //Error
+      function calcAge(birthyear) {
+        let age = birthyear - 2022;
+        return age;
+      }
+      let arrage = [2002, 2003, 2005];
+      let s = calcAge(arrage[1]);
+      console.log(s);
+
+      let d = [calcAge(arrage[0]), calcAge(arrage[1]), calcAge(arrage[2])];
+      console.log(d);
+    </script>
+  </body>
+</html>

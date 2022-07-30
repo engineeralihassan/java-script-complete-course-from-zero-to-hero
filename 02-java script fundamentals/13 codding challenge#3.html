@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>codding challenge # 3</h1></center>
+    <script>
+      // codding challenge Bmi
+      let mark = {
+        fullName: "Mark Miller",
+        mass: 78,
+        hieght: 1.69,
+        bmi: 0,
+        calcBMI: function () {
+          this.bmi = this.mass / this.hieght ** 2;
+
+          return this.bmi;
+        },
+      };
+
+      let john = {
+        fullName: "john Smith",
+        mass: 92,
+        hieght: 1.95,
+        bmi: 0,
+        calcBMI: function () {
+          this.bmi = this.mass / this.hieght ** 2;
+
+          return this.bmi;
+        },
+      };
+
+      let s1 = john.calcBMI();
+      console.log("John" + john.bmi);
+
+      let s2 = mark.calcBMI();
+      console.log("Mark" + mark.bmi);
+
+      console.log(s1, s2);
+      if (mark.bmi > john.bmi) {
+        console.log(
+          `The Mark BMI ${mark.bmi} is higher then john BMI ${john.bmi}`
+        );
+      } else {
+        console.log(
+          `The john BMI ${john.bmi} is higher then mark BMI ${mark.bmi}`
+        );
+      }
+    </script>
+  </body>
+</html>
