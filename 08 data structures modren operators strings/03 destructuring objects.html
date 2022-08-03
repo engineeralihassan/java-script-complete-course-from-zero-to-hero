@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Destructuring object in js</h1></center>
+    <script>
+      "use strict";
+      let chickHouse = {
+        name: "ChichenHouse",
+        location: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 12,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0,
+            close: 24,
+          },
+        },
+        order: function (strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery: function ({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and 
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+
+          console.log(obj);
+        },
+      };
+      // object destructuring in js
+      let { name, catgories, ordermanu, starmanu, openingHours } = chickHouse;
+      console.log("name", name);
+      console.log("categories", catgories);
+      console.log("order", ordermanu);
+      console.log("stert", starmanu);
+      console.log("opening", openingHours);
+      // destrutured object fom
+      //diiferent variable name to properties
+      let {
+        name: restuarent,
+        openingHours: hours,
+        starmanu: start,
+        ordermanu: ord,
+      } = chickHouse;
+      console.log(name);
+      console.log(hours);
+      console.log(start);
+      console.log(ord);
+      // defualt value
+      let { manu = [123, 34, 56, 78], starmanu: starter = [12, 45] } =
+        chickHouse;
+      console.log("************************");
+      console.log(manu);
+      console.log(starter);
+
+      // mutating variable while destructuring objects
+      let c = 12;
+      let d = 14;
+      let obj = { c: 23, d: 56, d: 45 };
+      ({ c, d } = obj);
+      console.log(c, d);
+      // object destructuring nested objects
+      let { fri } = openingHours;
+      console.log(fri);
+      // nesting aproach
+      let {
+        fri: { open: op, close: cl },
+      } = openingHours;
+      console.log(op, cl);
+      // calling a function a pass aobject
+
+      chickHouse.orderDelivery({
+        time: "23:34",
+        address: "11/1L Nambardar house",
+        strat1: 1,
+        main1: 3,
+      });
+      chickHouse.orderDelivery({
+        time: "23:34",
+        address: "11/1L Ali Hassan House",
+      });
+    </script>
+  </body>
+</html>

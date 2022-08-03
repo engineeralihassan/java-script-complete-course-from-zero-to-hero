@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codding challenge # 1</title>
+  </head>
+  <body>
+    <center><h1>codding challenge number #1</h1></center>
+    <script>
+      // codding challenge number #1
+      // let players1 = [
+      //   "Ali",
+      //   "Husnain",
+      //   "Anas",
+      //   "Usman",
+      //   "awad",
+      //   "Rashid",
+      //   "Waqqas",
+      //   "Shahid",
+      //   "Tariq",
+      // ];
+      // let players2 = [
+      //   "Ammanat",
+      //   "Ali Raza",
+      //   "Acho",
+      //   "Bobby",
+      //   "Athar",
+      //   "umar hayat",
+      //   "Bablo",
+      //   "kashif",
+      //   "Sheri",
+      // ];
+      // let [gk1, ...fieldplayers1] = players1;
+      // let [gk2, ...fieldplayers2] = players2;
+      // console.log("The Galaxy club goalkepper is :", gk1);
+      // console.log("The Galaxy club fieldplayers are :", ...fieldplayers1);
+      // console.log("The Wapda club goalkepper is :", gk2);
+      // console.log("The Wapda club fieldplayers are :", ...fieldplayers2);
+      // let allplayers = [...players1, ...players2];
+      // console.log(...allplayers);
+      // players1Final = ["Thiago", "Coutinho", "Perisic", ...players1];
+      // console.log(...players1Final);
+      // ******************************************************************************
+      const game = {
+        team1: "GAlaxy FC 11/1L",
+        team2: "Wapda X1 FC !!/1L",
+        players: [
+          [
+            "Ali",
+            "Husnain",
+            "Anas",
+            "Usman",
+            "awad",
+            "Rashid",
+            "Waqqas",
+            "Shahid",
+            "Tariq",
+          ],
+          [
+            "Ammanat",
+            "Ali Raza",
+            "Acho",
+            "Bobby",
+            "Athar",
+            "umar hayat",
+            "Bablo",
+            "kashif",
+            "Sheri",
+          ],
+        ],
+        score: "2:0",
+        scored: ["ZAryab", "Jawad", "Rashid", "Zahid"],
+        date: "Nov 9th, 2021",
+        odds: {
+          team1: 1.33,
+          x: 3.25,
+          team2: 6.5,
+        },
+      };
+      // 1.
+      const [players1, players2] = game.players;
+      console.log(players1, players2);
+
+      // 2.
+      const [gk, ...fieldPlayers] = players1;
+      console.log(gk, fieldPlayers);
+
+      // 3.
+      const allPlayers = [...players1, ...players2];
+      console.log(allPlayers);
+
+      // 4.
+      const players1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
+
+      // 5.
+
+      const {
+        odds: { team1, x: draw, team2 },
+      } = game;
+      console.log(team1, draw, team2);
+
+      // 6.
+      const printGoals = function (...players) {
+        console.log(...players);
+        console.log(`${players.length} goals were scored`);
+      };
+
+      // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+      // printGoals('Davies', 'Muller');
+      printGoals(...game.scored);
+
+      // 7.
+      team1 < team2 && console.log("Team 1 is more likely to win");
+      team1 > team2 && console.log("Team 2 is more likely to win");
+    </script>
+  </body>
+</html>

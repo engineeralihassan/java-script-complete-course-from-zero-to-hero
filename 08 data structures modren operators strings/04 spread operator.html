@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>spread operators in js</h1></center>
+    <script>
+      "use strict";
+
+      let arr = [1, 2, 3, 4, 5, 6, 7];
+      let arr2 = [12, 34, 56, arr[1], arr[2]];
+      let arr3 = [12, 34, 56, arr, arr2];
+
+      console.log(arr);
+      console.log(arr2);
+      console.log(arr3);
+      // sPreaD OPERATORS
+      let arr4 = [12, 34, ...arr2, ...arr];
+      console.log(arr4);
+      // example real
+      let chickHouse = {
+        name: "ChichenHouse",
+        location: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 12,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0,
+            close: 24,
+          },
+        },
+        order: function (strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery: function ({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+        },
+        orderPasta: function (ing1, ing2, ing3) {
+          console.log(`Here is oyur pasta Made with
+           ${ing1},${ing2} and ${ing3}`);
+        },
+      };
+      let nemanue = [...chickHouse.ordermanu, "Local food", "charsi tikka"];
+      console.log(nemanue);
+      // to important usecase of the spread operators
+      // it is used the shallow coppy and merg 2 arrays
+      let ordermanuCopy = [...chickHouse.ordermanu];
+
+      // merg and join 2 arrays
+      let merge = [...chickHouse.ordermanu, ...chickHouse.starmanu];
+      console.log(merge);
+
+      // spread opearators works with all iterables
+      // iterable in js=
+      // arrays,maps,sets,strings but not objects
+
+      // spread to use on strings
+
+      let m = "AliHassan";
+      let m1 = [...m];
+      console.log(m1);
+      // this is not use tit in the template literals
+      // console.log(`this is ${...arr}`) not use in this place
+
+      // **************************
+      // spread operators in arguments in function
+      let ings = ["Vegetables", "Chicken", "bread"];
+
+      chickHouse.orderPasta(...ings);
+      // spread operatos in objects
+      let pakRohani = {
+        ...chickHouse,
+        founder: "M Mustaq",
+        founding: 2002,
+      };
+      console.log(pakRohani);
+      let newobj = { ...chickHouse };
+      newobj.name = "Food Gallery";
+      console.log(newobj.name);
+      console.log(chickHouse.name);
+    </script>
+  </body>
+</html>

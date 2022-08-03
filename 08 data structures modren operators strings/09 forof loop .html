@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>forof loop in js</h1></center>
+    <script>
+      // forof loop in arrays
+      let ar = ["Ali Hassan", "Husnain", "Rubbani", "Sundar", "Elahi"];
+      let arr = [78, 34, 56, "Ali Hassan", ...ar];
+      let arr1 = [12, 34, 56, 78, 90, ...arr];
+      for (Elements of arr1) {
+        console.log(Elements);
+      }
+      for (Elements of ar.entries()) {
+        console.log(`Onindex:${Elements[0] + 1} is :${Elements[1]}`);
+      }
+      // destructuring this arrays
+      for ([i, el] of ar.entries()) {
+        let [i, el] = [el, i];
+        console.log(`Onindex:${el + 1} is :${i}`);
+      }
+    </script>
+  </body>
+</html>

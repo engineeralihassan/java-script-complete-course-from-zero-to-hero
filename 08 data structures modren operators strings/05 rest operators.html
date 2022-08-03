@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Rest operators in java script</h1></center>
+    <script>
+      // spread operators
+      let arr = [1, 2, 3, 4];
+      let arr1 = [12, 34, ...arr];
+      // rest operators left side in the assignment
+      let [a, ...others] = arr1;
+      console.log(others);
+      // rest is the array of rest variables
+      // spread is tha array of elements
+      // object
+      let chickHouse = {
+        name: "ChichenHouse",
+        location: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 12,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0,
+            close: 24,
+          },
+        },
+        order: function (strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery: function ({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+        },
+        orderPizza: function (mainings, ...otherings) {
+          console.log(`The main ingredient of pizza is ${mainings}
+            and othe ingredients are ${otherings} `);
+        },
+      };
+
+      let [pizza, , risato, ...notfavouriteFood] = [
+        ...chickHouse.ordermanu,
+        ...chickHouse.starmanu,
+      ];
+      console.log(pizza);
+      console.log(risato);
+      console.log(notfavouriteFood);
+      console.log(notfavouriteFood[1]);
+      console.log(notfavouriteFood[2]);
+      // rest operators in objects working
+      let { sat: holiday, ...weekDays } = chickHouse.openingHours;
+      console.log(weekDays);
+      console.log(holiday);
+      let {
+        sat: { open, ...weekDays1 },
+      } = chickHouse.openingHours;
+      console.log(open, weekDays1);
+      //rest operators in functions
+      let add = function (...parameters) {
+        let sum = 0;
+
+        for (let i = 0; i < parameters.length; i++) {
+          sum += parameters[i];
+        }
+        console.log(sum);
+      };
+
+      add(12, 3, 4, 5, 6, 7, 8, 90);
+      let x = [12, 43, 56, 78, 90, 345];
+
+      add(...x);
+      let ings = [
+        "Chicken",
+        "bread",
+        "chilli",
+        "mionees",
+        "souce",
+        "ketchup",
+        "salt",
+      ];
+
+      chickHouse.orderPizza(...ings);
+    </script>
+  </body>
+</html>
