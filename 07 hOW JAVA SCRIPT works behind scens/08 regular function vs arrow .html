@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Regular function vs arrow functions this keyword</h1></center>
+    <ol>
+      <li>we could not needthe variable with var</li>
+      <li>becuase this is take data d]from globally</li>
+    </ol>
+    <script>
+      "use strict";
+      var lastName = "Hamid";
+      let ali = {
+        firstName: "Ali",
+        lastName: "Hassan",
+        age: 20,
+        class: "BSSE",
+        RollNo: 5063,
+        sum: 0,
+        marks: [89, 67, 89, 56, 78],
+        cgpa: function () {
+          for (let i = 0; i < this.marks.length; i++) {
+            this.sum += this.marks[i];
+          }
+          return this.sum / this.marks.length - 1;
+        },
+        agrigate: () => {
+          console.log("This is  name", this.lastName);
+        },
+      };
+      console.log(ali.cgpa());
+      ali.agrigate();
+
+      // with var this keyword in  functions
+
+      // with inside the function another function
+      let husnain = {
+        name: "Husnain",
+        nick: "Rabbani",
+        Uni: "UCMT",
+        fees: 1050000,
+        scolarshp: function () {
+          this.scolarshp = (this.fees / 25) * 100;
+          console.log("The scholarship is : ", this.scolarshp);
+          let self = this;
+
+          let isToper = function () {
+            console.log(self);
+            if (self.fees >= 100000) {
+              console.log("Husnain is The topper");
+            }
+          };
+          isToper();
+        },
+      };
+      husnain.scolarshp();
+      // inner function undefined solution in Arrow functions
+      let anas = {
+        name: "Anas",
+        nick: "Ashiq",
+        Uni: "Mishrishah",
+        salary: 30000,
+        saving: function () {
+          this.scolarshp = (this.salary / 25) * 100;
+          console.log("The saving is : ", this.scolarshp);
+          let that = this;
+
+          let isToper = () => {
+            console.log("Thisnis arraow", this);
+            if (this.salary > 28000) {
+              console.log("Anas is on Good job");
+            }
+          };
+          isToper();
+        },
+      };
+      anas.saving();
+    </script>
+  </body>
+</html>

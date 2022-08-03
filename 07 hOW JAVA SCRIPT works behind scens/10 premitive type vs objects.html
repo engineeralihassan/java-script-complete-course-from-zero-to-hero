@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>primitive types vs objects in java script</title>
+  </head>
+  <body>
+    <center><h1>primitive types vs objects in java script</h1></center>
+    <p>
+      SO let see the concept of the primitive and objects value in java script.
+      let primitive <br />
+      value are address bassed and objects are the reference based . when we
+      change the primitive avlue it store <br />
+      on a diffrent address thats why we see old value are same; but the objects
+      are reference type in memory. <br />
+    </p>
+    <script>
+      let age = 11;
+      let newage = age;
+      age = 23;
+      console.log(newage, age);
+      // objects
+      let me = {
+        name: "Ali",
+        age: 20,
+        class: "BSSE",
+      };
+      let hus = me;
+      hus.age = 23;
+      console.log(me.age, hus.age);
+      // exaple in pracice
+      let bfmfn = "Ali";
+      let afmfn = bfmfn;
+
+      bfmfn = "Ali Hassan";
+
+      console.log(bfmfn, afmfn);
+      // objects
+      let aliunm = {
+        name: "Ali Hassan",
+        age: 20,
+        marstatus: "unMarried",
+      };
+      let alim = {
+        name: aliunm.name,
+        age: aliunm.age,
+      };
+      console.log("Before", aliunm, "After", alim);
+      alim.marstatus = "married";
+      console.log("Before", aliunm, "After", alim);
+      let alisecm = alim;
+      alisecm.marstatus = "DEvorced";
+      console.log("Before", alisecm, "After", alim);
+
+      // copy the objects in js
+      console.log("************************************************");
+
+      let jessica = {
+        name: "Jessica",
+        age: "55",
+        job: "teacher",
+      };
+      let jessicaedu = {
+        matric: ["school of toughts", 500, 460, ["jonas", "Ali", "Matilda"]],
+        inter: ["superior collage", 500, 389, ["schemaddman", "Ali", "sundar"]],
+        uni: [
+          "univerty of california",
+          500,
+          460,
+          ["jonas scedmann", "Ali hassan", "Matilda"],
+        ],
+        bioData: function () {
+          console.log("Matric Bio Data");
+          console.log(`School Name    total    obtain    friends`);
+          for (let i = 0; i < this.matric.length; i++) {
+            console.log(`${this.matric[i]}:`);
+
+            if (
+              typeof this.matric[i] !== "string" &&
+              typeof this.matric[i] !== "number"
+            ) {
+              console.log("Jessica friend");
+              for (
+                let j = 0;
+                j < jessicaedu.matric[jessicaedu.matric.length - 1].length;
+                j++
+              ) {
+                console.log(jessicaedu.matric[i][j]);
+              }
+            }
+          }
+        },
+      };
+      jessicaedu.bioData();
+
+      let jessicacopy = Object.assign(jessica, jessicaedu);
+      jessicacopy.matric.push("Husnain");
+      // jessicacopy.matric[2].push("Anas");
+
+      console.log(jessicacopy);
+      console.log(jessicaedu);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this keyword</title>
+  </head>
+  <body>
+    <center><h1>This keyword in java script</h1></center>
+    <p>
+      The this function is not same all the time. this value is decide how the
+      function is called <br />
+      like if we call it as a method it definessdthe object
+    </p>
+    <p></p>
+    <script>
+      "use strict";
+      console.log(this); // simple this=window object
+      // inobjects this keyword
+
+      // let ali = {
+      //   name: "Ali Hassn",
+      //   age: 20,
+      //   year: 2002,
+
+      //   calcAge: function () {
+      //     return 2022 - this.year;
+      //     console.log(this);
+      //   },
+      // };
+      // console.log(ali.calcAge());
+      // in the function expression
+
+      let calcage = function (birth) {
+        //   console.log(2022 - birth);
+        console.log("The this in function expresiion : ", this);
+      };
+
+      let s = calcage(2002);
+      console.log(s);
+
+      // THIS keyword IS FOR ARROW FUNCTIONS
+      // arrow function is not  this own this use the this in lexical
+
+      let calcage1 = (birth) => {
+        console.log(2022 - birth);
+        console.log("The this in arrow function  : ", this);
+      };
+
+      calcage1(2002);
+      // this is simple function dclaration
+      function calcage2(birth) {
+        console.log(2022 - birth);
+        console.log("The this in function declaration  : ", this);
+      }
+      // for objects
+      let jonas = {
+        name: "Jonas",
+        year: 2002,
+        calcage: function () {
+          console.log("in objects");
+
+          console.log(this);
+          console.log(2022 - this.year);
+        },
+      };
+      // other object
+      let matilda = {
+        year: 2004,
+      };
+      matilda["calcage"] = jonas.calcage;
+      console.log(matilda);
+      matilda.calcage();
+      jonas.calcage();
+    </script>
+  </body>
+</html>

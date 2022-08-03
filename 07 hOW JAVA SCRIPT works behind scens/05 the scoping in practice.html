@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>The scoping in practice</h1></center>
+    <script>
+      // scopping in practice
+      // example of scopping large level
+      let name = "Ali";
+      let lastName = "Hassan";
+      let prof = "Student";
+      let married;
+      let agemarried = function () {
+        let age = 2022 - 2002;
+        return age;
+
+        let married = () => {
+          if (age >= 18) {
+            //age use through parrent scopping
+            married = true; //lexecal scopping
+            console.log(`Mr ${name} is married`);
+          } else {
+            console.log("plz waite", age, "years");
+          }
+        };
+      };
+      let player1 = function () {
+        let player = true;
+        return player;
+      };
+
+      function bioData() {
+        let age = agemarried();
+        let player = player1();
+
+        console.log(`Mr ${name} is ${age}years old.
+      He is a ${prof} and he is  ${married ? "Married" : "not married"} person 
+      He is ${player ? "a player" : "not a player"}  `); //this age is error
+      }
+      bioData();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>variable hoistings in java script</title>
+</head>
+<body>
+      <center> <h1>Varaible hointing in java script</h1></center>
+      <p>hointing is the the very miss understanding cincept in the java script</p>
+      <ol>
+            <li>hoisted is some variable which is used before they are declaired</li>
+            <li>hointing working with function declarations</li>
+                   <li>hointing working with variable let and const</li>
+                          <li>hointing working with variable vars </li>
+                                 <li>hointing working with function expressions</li>
+      </ol>
+
+      </center>
+      <script>
+            // hoisting in variables
+            let name="Ali";
+            if(name==='Ali'){
+                  // console.log("My name :",name,"My job",job); //job error
+                  console.log("My name :",name)
+                  const age=2022-2002;
+                  console.log(age);
+                  // const job="programmer"; //error
+                  // var job="programmer" //undefined 
+                  // console.log(x);cannot acces thes 
+                  // let x=23; error 
+
+            }
+            // jhoisting in java script
+// console.log(job); //undefined
+// console.log(DOB);// error
+
+// console.log(me); //error
+
+let me = "ali hassan";
+var job = "Programer";
+const DOB = 2002;
+console.log(job); // not undefined
+console.log(DOB); //not  error
+
+console.log(me); // not error
+
+// rules of hoisting
+// adddec(12, 34);
+// expAdd(12, 34);
+// arrowAdd(12, 34);
+
+function adddec(a, b) {
+  console.log("function declaration");
+
+  return a + b;
+}
+let expAdd = function (a, b) {
+  console.log("function expression");
+  return a + b;
+};
+var arrowAdd = (a, b) => {
+  console.log("Arrow functions");
+
+  return a + b;
+};
+adddec(12, 34);
+expAdd(12, 34);
+arrowAdd(12, 34);
+// real example
+if (!product) deleteProduct();
+
+var product = 10;
+function deleteProduct() {
+  console.log("all products deleted");
+}
+      </script>
+      <script src="script.js"></script>
+</body>
+</html>
