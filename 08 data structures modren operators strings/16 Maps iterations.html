@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Maps iteration in js</h1></center>
+    <script>
+      let weekDays = [
+        "sunday",
+        "Monday",
+        "Tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+      ];
+      let openingHours = {
+        // # 3 factors we write arrays like this
+
+        [weekDays[4]]: {
+          open: 12,
+          close: 12,
+        },
+        [weekDays[2]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[3]]: {
+          open: 12,
+          close: 24,
+        },
+        [weekDays[1]]: {
+          open: 0,
+          close: 24,
+        },
+      };
+
+      const questions = new Map([
+        ["question", "what is the best programing language"],
+        [1, "c++"],
+        [2, "Java script"],
+        [3, "Python"],
+        [4, "Kotlin"],
+        [true, "Correct 🎉"],
+        [false, "try again"],
+      ]);
+      console.log(questions);
+      // converting objects into maps
+      let hoursmap = new Map(Object.entries(openingHours));
+
+      console.log(hoursmap);
+
+      for (let [key, value] of questions) {
+        if (typeof key === "number") {
+          console.log(`Anser ${key}: ${value}`);
+        }
+      }
+    </script>
+  </body>
+</html>

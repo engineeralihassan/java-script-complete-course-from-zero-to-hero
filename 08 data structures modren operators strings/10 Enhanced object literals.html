@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Enhanced the object literals in java script</h1></center>
+    <p></p>
+    <script>
+      // object literals has 3 types in js
+      // 1
+      // seprate objects
+      let weekDays = [
+        "Sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+      ];
+      let openingHours = {
+        // # 3 factors we write arrays like this
+
+        [weekDays[4]]: {
+          open: 12,
+          close: 12,
+        },
+        [weekDays[5]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[3]]: {
+          open: 0,
+          close: 24,
+        },
+        [`day-${2 + 4}`]: {
+          open: 0,
+          close: 24,
+        },
+      };
+
+      let chickHouse = {
+        name: "ChichenHouse",
+        location1: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        //   openingHours: openingHours, rather we write this
+        // we use
+        openingHours, //that the new tric method 1
+        weekDays,
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        // #2 for methods we skip the function keyword and braces
+        order(strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+        },
+        orderPizza(mainings, ...otherings) {
+          console.log(`The main ingredient of pizza is ${mainings}
+            and othe ingredients are ${otherings} `);
+        },
+        opendys24(day1, day2, day3, ...others) {
+          console.log(`The Chicken house give service ${day1} 24 hours service
+            and giv ethe 12 hours service in ${others}`);
+        },
+      };
+      // Recall concepts
+      // console.log(chickHouse.openingHours);
+      // let {
+      //   sat: { open, close },
+      //   fri,
+      // } = chickHouse.openingHours;
+      // console.log(open, close);
+      // #1 enhancement in object ib es2020;
+      // recall concepts
+      // let [sunday, monday, tuesday, ...others] = chickHouse.weekDays;
+      // let leftdays = [...others, "saturday"];
+      // console.log(...leftdays);
+      // console.log(...others);
+      // let chi = chickHouse.opendys24("fathersday", ...weekDays);
+      // // object destructuring recall
+      // let { name, location1, starmanu } = chickHouse;
+      // console.log(location1);
+      // let chickCopy = { ...chickHouse, brand: "Kfc" };
+
+      // let { brand, location11, starmanu1 } = chickCopy;
+      // console.log(brand);
+    </script>
+  </body>
+</html>

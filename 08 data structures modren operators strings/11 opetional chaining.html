@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opetional chaning in java script</title>
+  </head>
+  <body>
+    <center><h1>opetional chaining in js</h1></center>
+    <script>
+      // opetional chaining in js
+      // object literals has 3 types in js
+      // 1
+      // seprate objects
+      let weekDays = [
+        "Sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ];
+      let openingHours = {
+        // # 3 factors we write arrays like this
+
+        [weekDays[4]]: {
+          open: 12,
+          close: 12,
+        },
+        [weekDays[5]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[3]]: {
+          open: 12,
+          close: 24,
+        },
+        [weekDays[6]]: {
+          open: 0,
+          close: 24,
+        },
+      };
+
+      let chickHouse = {
+        name: "ChichenHouse",
+        location1: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        //   openingHours: openingHours, rather we write this
+        // we use
+        openingHours, //that the new tric method 1
+        weekDays,
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        // #2 for methods we skip the function keyword and braces
+        order(strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+        },
+        orderPizza(mainings, ...otherings) {
+          console.log(`The main ingredient of pizza is ${mainings}
+            and othe ingredients are ${otherings} `);
+        },
+        opendys24(day1, day2, day3, ...others) {
+          console.log(`The Chicken house give service ${day1} 24 hours service
+            and giv ethe 12 hours service in ${others}`);
+        },
+      };
+
+      // we wanter to get the and change the opening hours
+      // let we pretend we are in on live page
+      if (chickHouse.openingHours.mon)
+        console.log(
+          "This Resturent is open:",
+          chickHouse.openingHours.mon.open
+        );
+
+      // console.log(chickHouse.openingHours.mon.open);
+      chickHouse.openingHours.mon || console.log("This is no exist ");
+      console.log(chickHouse.openingHours.thursday.open);
+      // with opetional chaining
+      console.log(chickHouse.openingHours.monday?.open); //this is not error this is undefined
+
+      // console.log(chickHouse.openingHours.monday.open); //this is error
+      //     multilevel opetional chaining
+      console.log(chickHouse.openingHours?.thursday);
+      console.log(chickHouse.openingHours?.thursday?.open);
+      console.log(chickHouse?.oopeningHours?.thursday);
+
+      // real world example in js
+      let days = [...weekDays];
+      console.log(weekDays);
+      console.log(days);
+
+      for (let day of days) {
+        console.log(chickHouse?.oopeningHours?.thursday);
+
+        let open = chickHouse?.openingHours[day]?.open ?? "closed";
+
+        console.log(`on ${day}  we ${open ? "are open" : "are"}
+            ${open}`);
+      }
+      console.log(chickHouse.openingHours.wednesday.open);
+      // opetional chaining is for the methods calling
+      console.log(chickHouse.order?.(0, 1) ?? "Method does not exist");
+
+      console.log(chickHouse.oorder?.(0, 1) ?? "Method does not exist");
+
+      //     optional chaining for arrays
+      let users = [
+        {
+          name: "ali",
+          email: "ali@gmail.com",
+          id: 12,
+          age: 20,
+        },
+        {
+          name: "husnain",
+          email: "rabbani@gmail.com",
+          id: 0,
+          age: 23,
+        },
+        {
+          name: "anas",
+          email: "anas@gmail.com",
+          id: 15,
+          age: 20,
+        },
+      ];
+      console.log(users[1]?.name ?? " User no exist");
+      console.log(users[1]?.id ?? " property no exist");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>looping objects in js object ket=ys values and entries</h1>
+    </center>
+    <script>
+      // object in loops
+      let weekDays = [
+        "Sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ];
+      let openingHours = {
+        // # 3 factors we write arrays like this
+
+        [weekDays[4]]: {
+          open: 12,
+          close: 12,
+        },
+        [weekDays[5]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[3]]: {
+          open: 12,
+          close: 24,
+        },
+        [weekDays[6]]: {
+          open: 0,
+          close: 24,
+        },
+      };
+
+      let chickHouse = {
+        name: "ChichenHouse",
+        location1: "Welcome Road Renala khurd",
+        catgories: ["pizza", "burgers", "handi karahi", "BBQ"],
+
+        starmanu: [
+          "chicken pizza",
+          "zinger burger",
+          "chicken Tiikka",
+          "Egg burger",
+        ],
+        //   openingHours: openingHours, rather we write this
+        // we use
+        openingHours, //that the new tric method 1
+        weekDays,
+        ordermanu: [
+          "chicken karahi",
+          "fajita kabab pizza",
+          "beef burger",
+          "mutton karahi",
+        ],
+        // #2 for methods we skip the function keyword and braces
+        order(strat1, main1) {
+          return [this.starmanu[strat1], this.ordermanu[main1]];
+        },
+        //   orderDelivery: function (obj) {
+        //     console.log(obj);
+        //   },
+        orderDelivery({ strat1 = 1, main1 = 0, time, address }) {
+          console.log(time);
+          console.log(address);
+          console.log(`order delivers ! ${this.starmanu[strat1]} and
+         ${this.ordermanu[main1]}  will be deliverd to ${address}
+         at ${time} pm`);
+        },
+        orderPizza(mainings, ...otherings) {
+          console.log(`The main ingredient of pizza is ${mainings}
+            and othe ingredients are ${otherings} `);
+        },
+        opendys24(day1, day2, day3, ...others) {
+          console.log(`The Chicken house give service ${day1} 24 hours service
+            and giv ethe 12 hours service in ${others}`);
+        },
+      };
+      let keys = Object.keys(openingHours);
+      console.log(keys);
+
+      console.log(`we are open on ${keys.length} days is a week`);
+      console.log("So we are open");
+
+      for (let day of Object.keys(openingHours).entries()) {
+        console.log(day[0], day[1]);
+      }
+      for (let day of keys) {
+        console.log(day[0], day[1]);
+      }
+      // lets get the values of the objects
+      let values = Object.values(openingHours);
+      console.log(...values);
+      // looping over the entire object
+      let Entries = Object.entries(openingHours);
+
+      for (let day of Entries.entries()) {
+        console.log(day[0], day[1]);
+      }
+      for (let [key, { open: op, close: cl }] of Entries) {
+        console.log(`On ${key} we open at ${op}
+            and we close at${cl}`);
+      }
+      // for simple objects
+    </script>
+  </body>
+</html>

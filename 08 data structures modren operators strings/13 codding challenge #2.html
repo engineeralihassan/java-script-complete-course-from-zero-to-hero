@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>codding challenge number #2</h1></center>
+    <script>
+      //       codding challenge number #2
+      const game = {
+        team1: "GAlaxy FC 11/1L",
+        team2: "Wapda X1 FC !!/1L",
+        players: [
+          [
+            "Ali",
+            "Husnain",
+            "Anas",
+            "Usman",
+            "awad",
+            "Rashid",
+            "Waqqas",
+            "Shahid",
+            "Tariq",
+          ],
+          [
+            "Ammanat",
+            "Ali Raza",
+            "Acho",
+            "Bobby",
+            "Athar",
+            "umar hayat",
+            "Bablo",
+            "kashif",
+            "Sheri",
+          ],
+        ],
+        score: "2:0",
+        scored: ["ZAryab", "Jawad", "Rashid", "Zahid"],
+        date: "Nov 9th, 2021",
+        odds: {
+          team1: 1.33,
+          x: 3.25,
+          team2: 6.5,
+        },
+      };
+      // 1.
+      const [players1, players2] = game.players;
+      console.log(players1, players2);
+
+      // 2.
+      const [gk, ...fieldPlayers] = players1;
+      console.log(gk, fieldPlayers);
+
+      // 3.
+      const allPlayers = [...players1, ...players2];
+      console.log(allPlayers);
+
+      // 4.
+      const players1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
+
+      // 5.
+
+      // const {
+      //   odds: { team1, x: draw, team2 },
+      // } = game;
+      // console.log(team1, draw, team2);
+
+      // // 6.
+      // const printGoals = function (...players) {
+      //   console.log(...players);
+      //   console.log(`${players.length} goals were scored`);
+      // };
+
+      // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+      // printGoals('Davies', 'Muller');
+      // printGoals(...game.scored);
+
+      // // 7.
+      // team1 < team2 && console.log("Team 1 is more likely to win");
+      // team1 > team2 && console.log("Team 2 is more likely to win");
+      // challeng number#1
+      for (let [score, name] of game.scored.entries()) {
+        console.log(`The Goal #${score} is scored by ${name}`);
+      }
+      // let {
+      //   odds: { team1: gfc, x: draw, team2: wapdafc },
+      // } = game;
+      // console.log(gfc, draw, wapdafc);
+      // console.table(`The average of `, gfc);
+      // console.table(`The average of `, wapdafc);
+      // console.table(`The average of `, draw);
+      // for odds
+
+      let {
+        team1: Galaxy,
+        team2: Wapda,
+        odds: { team1: GalaxyOdd, team2: WapdaOdd, x: DrawOdd },
+      } = game;
+      console.log(`The Odd of Victory ${Galaxy} is: ${GalaxyOdd}
+      The Odd of Victory ${Wapda} is: ${WapdaOdd}
+      The Odd at which ${Galaxy} vs ${Wapda} is Draw:${DrawOdd}`);
+      // #4
+      let v = [1, 2, 3, 4];
+
+      // game.scorers = {};
+      // game.scorers.keys = game.scored;
+      // game.scorers.values = v;
+
+      // console.log(game.scorers);
+      // // keys
+      // let k = Object.keys(game.scorers);
+      // let p = Object.values(game.scorers);
+      const scorers = {};
+      for (const player of game.scored) {
+        scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+      }
+      console.log(scorers);
+
+      // let va = [...p];
+      // let ka = [...k];
+      // for (let i = 0; i < k.length; i++) {
+      //   console.log(`The Mr ${ka[i]} is scrored ${va[i]} Goals
+      //       `);
+      // }
+      // console.log(...k);
+      // console.log(...p);
+
+      // let Entries = Object.entries(game.scorers);
+
+      // console.log(Entries);
+      // for (let day of Entries.entries()) {
+      //   console.log(day[0], day[1]);
+      // }
+      // for (let [keys, values] of Entries) {
+      //   console.log(`On ${keys} we open at
+      //       and we close at${values}`);
+      // }
+
+      // for ([scorerName, scores] of kp.entries()) {
+      //   console.log(`Mr ${scorerName} is scored ${scores} id this Lallega `);
+      // }
+    </script>
+  </body>
+</html>

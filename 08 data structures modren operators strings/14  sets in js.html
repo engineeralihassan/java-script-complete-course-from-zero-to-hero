@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>stes in java script</h1></center>
+    <script>
+      "use strict";
+      // SETS in java script
+      let orderset = new Set([
+        "Ali",
+        "hassan",
+        "hassan",
+        "pasta",
+        "ali",
+        "Ali",
+      ]);
+      console.log(orderset);
+      console.log(orderset.size);
+      console.log(orderset.has("alih"));
+      console.log(orderset.has("ali"));
+      orderset.add("garlic bread");
+      console.log(orderset);
+      orderset.delete("Ali");
+      console.log(orderset);
+      // retirieve values
+      // orderset.clear();
+
+      //could not duplicate values
+      for (let order of orderset.entries()) {
+        console.log(order[1]);
+      }
+      // Example real usecase
+      const staff = ["water", "chef", "water", "manager", "chef", "waiter"];
+      //      converting intoarray
+      let uniqstaff = [...new Set(staff)];
+      console.log(uniqstaff);
+      console.log("now we put this in the for loop");
+      for (let [s1, s2] of uniqstaff.entries()) {
+        console.log(s1, s2);
+      }
+      console.log(uniqstaff.length);
+      // array set
+      let arrset = new Set(["Ali", "Sannan", "jut", "Muqadas"]);
+      console.log(arrset.size);
+      console.log(typeof arrset);
+      // Real example in sets
+           "use strict";
+      // SETS in java script
+      let orderset = new Set([
+        "Ali",
+        "hassan",
+        "hassan",
+        "pasta",
+        "ali",
+        "Ali",
+      ]);
+      console.log(orderset);
+      console.log(orderset.size);
+      console.log(orderset.has("alih"));
+      console.log(orderset.has("ali"));
+      orderset.add("garlic bread");
+      console.log(orderset);
+      orderset.delete("Ali");
+      console.log(orderset);
+      // retirieve values
+      // orderset.clear();
+
+      //could not duplicate values
+      for (let order of orderset.entries()) {
+        console.log(order[1]);
+      }
+      // Example real usecase
+      const staff = ["water", "chef", "water", "manager", "chef", "waiter"];
+      //      converting intoarray
+      let uniqstaff = [...new Set(staff)];
+      console.log(uniqstaff);
+      console.log("now we put this in the for loop");
+      for (let [s1, s2] of uniqstaff.entries()) {
+        console.log(s1, s2);
+      }
+      console.log(uniqstaff.length);
+      // array set
+      let arrset = new Set(["Ali", "Sannan", "jut", "Muqadas"]);
+      console.log(arrset.size);
+      console.log(typeof arrset);
+      // Real example in sets
+      
+    </script>
+  </body>
+</html>

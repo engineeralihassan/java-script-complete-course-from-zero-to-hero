@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Maps in java script</h1></center>
+    <script>
+      // maps in java script
+      let resturent = new Map();
+      resturent.set("name", "Chicken-house");
+      resturent.set(1, "WEllcome Road");
+      resturent.set(2, "Kalma chowk");
+      resturent
+        .set("categories", ["Pizza", "Burger", "Meal", "Juices"])
+        .set("open", 11)
+        .set("close", 24)
+        .set(true, "We are open")
+        .set(false, "we are closed");
+
+      console.log(resturent);
+      // get data fronm the maps
+      console.log(resturent.get("name"));
+      console.log(resturent.get("categories"));
+      console.log(resturent.get("open"));
+      console.log(resturent.get("close"));
+      console.log(resturent.get(true));
+      console.log(resturent.get(1));
+      // check
+      let time = 10;
+      console.log(
+        resturent.get(
+          time > resturent.get("open") && time < resturent.get("close")
+        )
+      );
+      // methodsa available in Maps
+      console.log(resturent.has("categories"));
+      console.log(resturent.delete(2));
+      console.log(resturent);
+      console.log(resturent.size);
+      // console.log(resturent.clear());
+      // assign arrays to keys in maps
+      let arr = [1, 2, 3];
+      resturent.set(arr, "Testing set arrays ");
+      console.log(resturent.get(arr));
+      console.log(resturent.get([11, 2, 3]));
+    </script>
+  </body>
+</html>
