@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Simple array Methods in java script</h1>
+    <p>in this section we learn about the simple arrays methods .</p>
+    <script>
+      // working with arays
+      // simple methods
+      "use strict";
+
+      /////////////////////////////////////////////////
+      /////////////////////////////////////////////////
+      // LECTURES
+
+      const currencies = new Map([
+        ["USD", "United States dollar", "PKR", "Saudi-Rial"],
+        ["EUR", "Euro"],
+        ["GBP", "Pound sterling"],
+      ]);
+
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+      // methods are array functions atach to all arrays
+      let arr = ["a", "b", "c", "d", "e"];
+      // slice methode
+      let g = arr.slice(2);
+      console.log(g);
+      g = arr.slice(1, 3);
+      console.log(g);
+      g = arr.slice(-1);
+      console.log(g);
+      g = arr.slice(0, -2);
+      console.log(g);
+      g = arr.slice();
+      console.log(g);
+      // splice methods
+      // console.log(arr.splice(2)); delete the elements
+      console.log(arr);
+      g = arr.splice(-1);
+      // more splice methods
+      let a = ["a", "b", "c", "d", "e"];
+      let b;
+      // b = a.splice(1, 3); // its delete the 3 elements from onward to position 1
+      // console.log(b);
+      // console.log(a);
+      //**********************************************8888
+
+      // Reversemethods
+      let c = ["k", "j", "i", "h", "g"];
+      let rev = c.reverse();
+      console.log(rev);
+      console.log(c);
+      // concate Methods
+      let letters = c.concat(arr);
+      console.log(letters);
+      // its better to use spread operators
+      // ****************************************
+      // Join methods
+      rev = letters.join("-");
+      console.log(rev);
+    </script>
+  </body>
+</html>

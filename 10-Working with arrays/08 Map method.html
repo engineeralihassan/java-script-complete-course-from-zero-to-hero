@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Map Method in java script</h1>
+    <p>
+      The map method in java script we learn in this lecture and <br />
+      perform some diffrent impotrtant operations on arays
+    </p>
+    <script>
+      "use strict";
+
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+      let converted = movements.map(function (el, ind, arr) {
+        console.log("Hello", ind);
+        return Math.trunc(el * 1.1);
+      });
+      console.log(movements);
+      console.log(converted);
+      let converted1 = converted.map((el, ind, arr) => Math.trunc(el * 1.1));
+
+      console.log(converted1);
+      // this is for more experienced developers
+      let nearr = movements.map((el, ind, arr) => {
+        if (el > 0) {
+          return `You deposited : ${el}`;
+        } else {
+          return `Yuo withdraw : ${Math.abs(el)}`;
+        }
+      });
+
+      console.log(...nearr);
+    </script>
+  </body>
+</html>

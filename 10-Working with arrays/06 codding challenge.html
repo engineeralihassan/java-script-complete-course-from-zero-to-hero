@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Coding challenge #1</h1>
+    <script>
+      let juliadog = [12, 34, 3, 67, 4];
+      let adamdog = [3, 12, 3, 5, 7];
+      let jcp = 0;
+      let acp = 0;
+      let jca = 0;
+      aca = 0;
+
+      let checkDogs = (juliadog, adamdog) => {
+        let juliaCorrect = juliadog.slice();
+        console.log(juliaCorrect.splice(0, 1));
+        console.log(juliaCorrect.splice(-2));
+        //   console.log(juliadog.slice(1, 3)); we also write this
+        let dogs = juliadog.concat(adamdog);
+        console.log(dogs);
+        dogs.forEach((element, index, arr) => {
+          if (element) {
+            console.log(`The dog # ${index} is ${
+              element > 0 && element <= 3 ? "Puppy" : "Adult"
+            } 
+                  And he is ${element} yeas old `);
+          }
+        });
+      };
+
+      checkDogs(juliadog, adamdog);
+    </script>
+  </body>
+</html>

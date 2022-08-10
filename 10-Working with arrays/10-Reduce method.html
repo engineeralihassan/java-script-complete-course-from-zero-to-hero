@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>The Reduce method in java script arrays</h1>
+    <p>
+      The reduce method is boild out the simple array and return the all the
+      elements <br />
+      like we adding up all the numbrs of movements and then return the total
+      balance <br />
+    </p>
+    <script>
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+      let toalBalnce = movements.reduce((acc, el, ind, arr) => {
+        console.log(`Accumulator : ${acc} & value :${el}`);
+        return acc + el;
+      }, 0); //this 0 is initial value of the accumulator
+
+      console.log(toalBalnce);
+      // example of the reduce
+      // let find the maximum value
+      let maximum = movements.reduce((max, el) => {
+        max < el;
+
+        return (max = el);
+      }, movements[0]); //the initial max is 1
+      console.log("The maximum is", maximum);
+    </script>
+  </body>
+</html>

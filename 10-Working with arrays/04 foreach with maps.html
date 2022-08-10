@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>ForEach loop in Maps</h1>
+    <p>
+      we see the foreach loop with the Maps and we already see this <br />
+      with the arrays.we seethis also with sets
+    </p>
+    <!-- with Maps-->
+    <script>
+      // with maps
+      const currencies = new Map([
+        ["USD", "United States dollar", "PKR", "Saudi-Rial"],
+        ["EUR", "Euro"],
+        ["GBP", "Pound sterling"],
+      ]);
+
+      currencies.forEach((el, ind, currMap) => {
+        console.log(`${ind} : ${el}`);
+        console.log(currMap);
+      });
+      // for sets
+      console.log("**************Sets forEach *****************");
+      // sets have no keys and values
+
+      let uniqCurr = new Set(["usd", "euro", "pkr ", "pkr", "euro", "gpb"]);
+      console.log(uniqCurr);
+      uniqCurr.forEach((item, ind, array) => {
+        console.log(`${ind} : ${item}`);
+        console.log(array);
+      });
+    </script>
+  </body>
+</html>

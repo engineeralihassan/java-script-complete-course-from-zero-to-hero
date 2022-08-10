@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <center><h1>For each loop in js</h1></center>
+    <p>in this lecture we will about the loops over arrays</p>
+    <script>
+      // working with arays as a foreach loop
+
+      const currencies = new Map([
+        ["USD", "United States dollar", "PKR", "Saudi-Rial"],
+        ["EUR", "Euro"],
+        ["GBP", "Pound sterling"],
+      ]);
+
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+      // for (let move of movements) {
+      // how we get the current index
+      for (let [i, move] of movements.entries()) {
+        if (move > 0) {
+          console.log("You deposited ", i, move);
+        } else {
+          console.log("You withdraw some money", i, Math.abs(move));
+        }
+      }
+      // ForEach loop
+      console.log("-----For Each loop in java script---");
+      // movements.forEach(function (item) {
+      // index current array
+      movements.forEach(function (item, index, array) {
+        if (item > 0) {
+          console.log("You deposited ", index, item);
+        } else {
+          console.log("You withdraw some money", index, Math.abs(item));
+        }
+      }); //break and continue statements not work in foreach
+
+      //
+    </script>
+  </body>
+</html>
