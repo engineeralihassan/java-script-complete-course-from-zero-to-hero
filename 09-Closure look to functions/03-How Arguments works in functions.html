@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section introductions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>How Arguments Works in functions</h1>
+    <p>
+      In this lecture we see the how the arguments works in the functions for
+      this <br />
+      we are go inside the video in which we see that the premitives vs objects
+      <br />
+      premitives and objects are also works in function as useal. the objects
+      are the <br />
+      reference type and the premitives are the value based .
+    </p>
+
+    <script>
+      //
+      // Arguments works in functions
+      let flight = "H1B1234";
+      let ali = {
+        name: "Ali Hassan",
+        passport: 3530123456,
+      };
+      let checkin = (flight, passenger) => {
+        console.log(passenger);
+        flight = "HLB12";
+        passenger.name = "Mr" + passenger.name;
+        console.log(passenger);
+      };
+      checkin(flight, ali);
+      console.log(flight, ali);
+    </script>
+  </body>
+</html>

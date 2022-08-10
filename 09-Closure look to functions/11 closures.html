@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center><h1>Closures Feature is java script</h1></center>
+    <p>closures is a goood feature of java script.</p>
+    <script>
+      // closures
+      let securebooking = function () {
+        let counter = 0;
+        return function () {
+          counter++;
+          console.log(counter);
+          console.log("This is inner functions");
+        };
+      };
+      let book = securebooking();
+
+      book();
+      book();
+      book();
+      // more examples of the closures
+      let f;
+      let g = function () {
+        let a = 23;
+        f = function () {
+          console.log(a * 2);
+        };
+      };
+      g();
+      f();
+      //
+      let h = function () {
+        let b = 777;
+        f = function () {
+          console.log(b * 3);
+        };
+      };
+      h();
+      f();
+    </script>
+  </body>
+</html>

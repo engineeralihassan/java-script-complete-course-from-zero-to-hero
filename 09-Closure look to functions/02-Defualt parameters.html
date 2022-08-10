@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEfualt parameters in java script</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>DEfualt parameters in java script</h1>
+    <p>
+      DEfualt parameters in java script. we start from the easiest part of the
+      section. <br />
+      we basice and 3 types of function know already. its helpfull sometime we
+      <br />
+      set the some parameters are set the defualt if we set manual this value is
+      <br />
+      override the defualt values
+    </p>
+    <script>
+      "use strict";
+      let bookings = [];
+      // let createBooking = function (
+      //   flightNum = 2,
+      //   numpassengers = 200,
+      //   price = 120000
+      // ) {
+      //   // in Es5 set defualt values
+      //   //   flightNum = flightNum || 1;
+      //   //   numpassengers = numpassengers || 500;
+      //   //   price = price || 1500000;
+
+      //   let booking = {
+      //     flightNum,
+      //     numpassengers,
+      //     price,
+      //   };
+      //   let newobj = { ...booking, Airline: "Air-Blu", ceo: "Ali Hassan" };
+      //   console.log(newobj);
+
+      //   console.log(booking);
+      //   bookings.push(booking);
+      // };
+      // createBooking("LH123");
+      // createBooking("Bf123", 300);
+      // createBooking("Bf123", 300, 130000);
+      // The defialt parameters could contain any expresion
+      let Emergenct = function (
+        flightNum = "4-" + "Emrgiency",
+        numpassengers = 1,
+        price = 150000000 / numpassengers
+      ) {
+        // in Es5 set defualt values
+        //   flightNum = flightNum || 1;
+        //   numpassengers = numpassengers || 500;
+        //   price = price || 1500000;
+
+        let booking = {
+          flightNum,
+          numpassengers,
+          price,
+          detail() {
+            console.log(
+              `The ${
+                this.flightNum === "4-Emrgiency"
+                  ? "Emergency-Flight"
+                  : "Normal Flight"
+              },`
+            );
+          },
+        };
+        booking.detail();
+
+        //   let newobj = { ...booking, Airline: "Air-Blu", ceo: "Ali Hassan" };
+        //   console.log(newobj);
+
+        //   console.log(booking);
+        bookings.push(booking);
+      };
+      Emergenct("LH123");
+      Emergenct("Bf123", 300);
+      Emergenct("Bf123", 50);
+      // WHEN WE dont set a parameter
+      Emergenct(undefined, undefined, 2000);
+    </script>
+  </body>
+</html>

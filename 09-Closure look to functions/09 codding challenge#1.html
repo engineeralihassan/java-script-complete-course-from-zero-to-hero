@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section introductions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>codding challenge # 1</h1>
+    <div class="buttons">
+      <button class="btn1">Anser Poll!?</button>
+    </div>
+    <script>
+      // btn call
+      const poll = {
+        question: "What is the best programing language?",
+        option: ["O:Java script", "1:python", "2:Rust", "3:C++"],
+        answers: new Array(4).fill(0),
+        registerNewAns() {
+          console.log(this.question);
+          for (opt of this.option) {
+            console.log(opt);
+          }
+
+          return () => {
+            let inp = Number(prompt("Enter your Choice"));
+            if (typeof inp === "number" && inp > -1 && inp < 4) {
+              this.answers[inp] = this.answers[inp] + 1;
+              console.log(...this.answers);
+              this.displayResults();
+              this.displayResults("string");
+            } else {
+              console.log("plz Enter  number between 0-3");
+            }
+          };
+        },
+        displayResults(type = "array") {
+          if (type === "array") {
+            console.log(this.answers);
+          } else if (type === "string") {
+            console.log(this.answers.join(", "));
+          }
+        },
+      };
+      let ans = poll.registerNewAns();
+
+      let btn = document.querySelector(".btn1");
+      btn.addEventListener("click", ans);
+
+      // console.log(...poll.answers);
+      // bonus secrion
+
+      poll.displayResults.call({ answers: [1, 2, 3, 4] }, "string");
+    </script>
+  </body>
+</html>

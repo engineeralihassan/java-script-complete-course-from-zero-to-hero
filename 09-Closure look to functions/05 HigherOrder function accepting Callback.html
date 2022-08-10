@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section introductions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>HigherOrder functions accepting callbacks in JS</h1>
+    <p>
+      In this lecture we look how the HigherOrderfunctions accepting <br />
+      Callbacks in java script how it works in higher order functions <br />
+    </p>
+    <h1>why call functions is more used in our websites</h1>
+    <p>
+      These are widely used in java script becuase the more help <br />
+      s in our code . its really helpfull to create abstractions and <br />
+      abstraction is very usefull in programming becuase we want to <br />
+      some code to hid in the ral programe .
+    </p>
+    <script>
+      // HigherOrder functions accepting callbacks in JS
+      let oneWord = function (str) {
+        return str.replace(/ /g, "-").toLowerCase();
+      };
+      let firstCapital = (str) => {
+        //   let str1 = str.replace(str[0], str[0].toUpperCase());
+        const [first, ...others] = str.split(" ");
+        return [first[0].toUpperCase() + first.slice(1), ...others].join(" ");
+
+        //   console.log(str1);
+      };
+      // calling the generic function
+
+      console.log(oneWord("HEllo My name is ali hassan"));
+      console.log(firstCapital("my name is ali"));
+      // let creat a Higher order function
+      let Transformer = function (str, fn) {
+        console.log(`Transformed String : ${fn(str)}`);
+        console.log(`This is transformed by : ${fn.name}`);
+      };
+      Transformer("ali hassan is my best friend", firstCapital);
+      Transformer("Hello ali how are you", oneWord);
+      // callback functios
+
+      document.querySelector("h1").addEventListener("click", higher5); //higher5 is callback
+      function higher5() {
+        console.log("Hello Hello a");
+
+        alert("🚗🚓🚕🛺🚙🚌🚜🚛🚚🚒🚑");
+      }
+
+      document.body.addEventListener("click", callback); //higher5 is callback
+      function callback() {
+        console.log("Hello Hello a");
+
+        alert("👨👨🧑👧👦🧒👶👵👶👶🧒🧓👴👩‍🦳👨‍🦳");
+      }
+      let see = ["Ali", "hassan", "is", "best", "fiend"];
+      let s = see.join(" ");
+      console.log(s);
+      // foreach method
+      // see.forEach(higher5); nice example of callback
+      //
+    </script>
+  </body>
+</html>

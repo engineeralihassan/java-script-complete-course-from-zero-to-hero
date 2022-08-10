@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section introductions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>The call and apply methods in functions</h1>
+    <p>
+      In this section we learn about the this functions and how we could<br />
+      do this by manually the this keyword is working in the state functions
+    </p>
+    <script>
+      let bookingsarr = ["ali", "hassan"];
+      let pia = {
+        name: "Pakistan International Airline",
+        lataCode: "PIAB",
+        bookings: [],
+        book(flighNum, pass) {
+          console.log(`${pass} booked a seat on ${this.name}
+          and the flight plane : ${this.lataCode}
+           and flight number ${flighNum}  `);
+          console.log(this.bookings);
+          this.bookings.push({
+            flight: `${this.lataCode}${flighNum}`,
+            name: this.name,
+          });
+          //     let [fa, fb, ...others] = this.bookings;
+          //     console.log("***************************");
+          //     console.log(fa, fb, others);
+          //     let { f11, f12 } = fa;
+          //     console.log("iii", f11);
+
+          //     console.log(ss1, ss2);
+        },
+      };
+      pia.book(239, "Ali");
+      pia.book(456, "Husnain");
+      pia.book(111, "Akam");
+      pia.book(222, "Rashid");
+      console.log(pia);
+
+      // successfull
+      // pia open new branch
+      let blueAir = {
+        name: "Blue-Airlines",
+        lataCode: "BAB123",
+        bookings: [],
+        book(flighNum, pass) {
+          console.log(`${pass} booked a seat on ${this.name}
+          and the flight plane : ${this.lataCode}
+           and flight number ${flighNum}  `);
+        },
+      };
+      let book = pia.book;
+      // does not work
+      // book(23, "Sara williams");
+      book.call(blueAir, 23, "AliHassan");
+      // LET MAKE NEW COMPANY
+      let swiss = {
+        name: "Swiss-Airline",
+        lataCode: "SAB",
+        bookings: [],
+      };
+      book.call(swiss, 2, "Naveed ahmad");
+      // APPLY METHODS
+      let flightData = [534, "George Aly"];
+      book.apply(swiss, flightData);
+      // better way
+      book.call(swiss, ...flightData);
+    </script>
+  </body>
+</html>

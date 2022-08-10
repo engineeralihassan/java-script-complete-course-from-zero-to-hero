@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section introductions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Bind Method in java script functions</h1>
+    <p>
+      The Bind method is very impotant then the call an the apply methods <br />
+      the bind method is also use to call this method in functions like call
+      methods
+
+      <br />
+    </p>
+    <div class="buttons">
+      <button class="buy">Buy New</button>
+    </div>
+    <script>
+      let pia = {
+        name: "Pakistan International Airline",
+        lataCode: "PIAB",
+        bookings: [],
+        book(flighNum, pass) {
+          console.log(`${pass} booked a seat on ${this.name}
+          and the flight plane : ${this.lataCode}
+           and flight number ${flighNum}  `);
+          console.log(this.bookings);
+          this.bookings.push({
+            flight: `${this.lataCode}${flighNum}`,
+            name: this.name,
+          });
+        },
+      };
+      pia.book(222, "Rashid");
+      console.log(pia);
+      // airblue object
+      let blueAir = {
+        name: "Blue-Airlines",
+        lataCode: "BAB123",
+        bookings: [],
+        book(flighNum, pass) {
+          console.log(`${pass} booked a seat on ${this.name}
+          and the flight plane : ${this.lataCode}
+           and flight number ${flighNum}  `);
+        },
+      };
+      let book = pia.book;
+      // does not work
+      // book(23, "Sara williams");
+      book.call(blueAir, 23, "AliHassan");
+      // LET MAKE NEW COMPANY
+      let swiss = {
+        name: "Swiss-Airline",
+        lataCode: "SAB",
+        bookings: [],
+      };
+      book.call(swiss, 2, "Naveed ahmad");
+      // APPLY METHODS
+      // let flightData = [534, "George Aly"];
+      // book.apply(swiss, flightData);
+      // // better way
+      // book.call(swiss, ...flightData);
+      // Bind methods
+      console.log("****** Bind methods ******");
+
+      let bookPia = book.bind(pia);
+      bookPia(123, "AliHassanGhafoor");
+      let bookSwiss = book.bind(swiss);
+      let bookBlu = book.bind(blueAir);
+      bookBlu(78, "Rashid ch");
+      bookSwiss(23, "Sajad");
+      // when some variable are set also
+      let bookseat23 = book.bind(pia, 23);
+      bookseat23("ali Hassan");
+      // all set
+      let bookseat2 = book.bind(pia, 2, "AliGassan");
+      bookseat2();
+      // let this is with new addevnetlistners
+
+      pia.planes = 300;
+      pia.buynewplane = function () {
+        this.planes++;
+        console.log(this.planes);
+      };
+      // let btn = document.getElementsByClassName("buy");
+      // btn.addEventListner("click", pia.buynewplane); //this is point to the element button
+      let btn = document.querySelector(".buy");
+      btn.addEventListener("click", pia.buynewplane.bind(pia));
+      //   partial applications
+      let addtax = (rate, value) => {
+        value = value + value * rate;
+        console.log(value);
+      };
+      addtax(2, 3000);
+      // bind method
+      let addVata = addtax.bind(null, 0.23);
+      addVata(100);
+      //challenge
+      let func1 = function (rate) {
+        console.log(`rate:${rate}`);
+        return (value) => {
+          let v = value + value * rate;
+          console.log(v);
+        };
+      };
+      let func = func1(0.23);
+      func(3000);
+    </script>
+  </body>
+</html>
