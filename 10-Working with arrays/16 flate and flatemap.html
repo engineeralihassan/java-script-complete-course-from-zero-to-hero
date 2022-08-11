@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>flate and flateMap methods in java scriptr arrays</h1>
+    <script>
+      const arr = [
+        12,
+        3,
+        4,
+        5,
+        6,
+        [12, 3, 4, 5, 6],
+        [5, 6, 7, 8, 9],
+        [78, 56, 34, 67, 89],
+      ];
+      let sumall = arr.flat();
+      console.log(sumall);
+      // nested arrays 3d arrays
+      let d3arr = [1, 2, [2, 4, [5, 6, 7], 8], [9, 10, [11, 12, 13], [15, 16]]];
+      let make3d = d3arr.flat();
+      console.log(make3d);
+      // LET MAKE THE  ARRAYOF ALL THE MOVEMENTS OF ALL ACOUNTS
+      let allMovements = accounts.map((acc) => acc.movements);
+      console.log(...allMovements);
+      let s = allMovements.flat();
+      let allaccbalance = s.reduce((acc, el) => {
+        console.log(`ACCU:${acc} : ${el}`);
+
+        return acc + el;
+      }, 0);
+      console.log(allaccbalance);
+
+      // flate map methods
+      let overallBakance = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce((accu, el) => accu + el, 0);
+      console.log(overallBakance);
+    </script>
+  </body>
+</html>
