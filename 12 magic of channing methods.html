@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Magic of the channing of arrays methods</h1>
+    <p>
+      the lecture in which we use all the arrays methos at once . it is more
+      usefull <br />
+      the other things
+    </p>
+    <script>
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+      let totalBalance = movements
+        .filter((dep, ind) => dep > 0)
+        .map((uero, ind) => uero * 1.1)
+        .reduce((acc, usd) => acc + usd, 0);
+      console.log(Math.trunc(totalBalance));
+    </script>
+  </body>
+</html>
