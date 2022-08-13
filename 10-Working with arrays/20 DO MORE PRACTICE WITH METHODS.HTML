@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  -->
+    <script>
+      // more practice with array methods
+      const totalbalance = accounts
+        .flatMap((acc) => acc.movements)
+        .filter((move) => move > 0)
+        .reduce((acc, el) => acc + el, 0);
+      console.log(totalbalance);
+      // let more
+      let numDeposit1000 = accounts
+        .flatMap((acc) => acc.movements)
+        .filter((move) => move > 1000).length;
+
+      console.log(numDeposit1000);
+      // second trick
+      let num2Deposit1000 = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce((acc, el) => (el >= 100 ? acc + 1 : acc), 0);
+      console.log(num2Deposit1000);
+
+      // exercise # 3
+      // create an object sum of deposits ,
+      let sums = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce(
+          (sums, curarr) => {
+            curarr > 0 ? (sums.deposits += curarr) : (sums.withdraws += curarr);
+            return sums;
+          },
+          { deposits: 0, withdraws: 0 }
+        );
+      console.log(sums);
+      console.log(sums.deposits);
+      console.log(sums.withdraws);
+      let { deposits, withdraws } = sums;
+      console.log("sums", deposits, withdraws);
+
+      // destructure the objects her directly
+      let { deposits1, withdraws1 } = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce(
+          (sums, curarr) => {
+            curarr > 0
+              ? (sums.deposits1 += curarr)
+              : (sums.withdraws1 += curarr);
+            return sums;
+          },
+          { deposits1: 0, withdraws1: 0 }
+        );
+      //
+      console.log("********************");
+
+      console.log(withdraws1);
+      console.log(deposits1);
+
+      // do this with another example
+      let { deposits2, withdraws2 } = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce(
+          (sums, curarr) => {
+            sums[curarr > 0 ? "deposits2" : "withdraws2"] += curarr;
+            return sums;
+          },
+          { deposits2: 0, withdraws2: 0 }
+        );
+      //
+      console.log("********************");
+
+      console.log(withdraws2);
+      console.log(deposits2);
+
+      // let do this by arrays
+      let [depos, widths] = accounts
+        .flatMap((acc) => acc.movements)
+        .reduce(
+          (sums, curarr) => {
+            curarr > 0 ? (sums[0] += curarr) : (sums[1] += curarr);
+            return sums;
+          },
+          [0, 0]
+        );
+      //
+      console.log("******************** arrays");
+
+      console.log(depos);
+      console.log(widths);
+      console.log(accounts);
+      accounts.push(sums);
+      console.log(accounts);
+
+      // lets another case exmple of methods
+      let titleconverted = function (title) {
+        let exceptions = [
+          "a",
+          "is",
+          "to",
+          "an",
+          "the",
+          "but",
+          "or",
+          "on",
+          "in",
+          "width",
+        ];
+        let titlecase = title
+          .toLowerCase()
+          .split(" ")
+          .map((el) =>
+            exceptions.includes(el) ? el : el[0].toUpperCase() + el.slice(1)
+          )
+
+          .join(" ");
+        return titlecase;
+      };
+
+      console.log(titleconverted("this is a big string but no to big"));
+    </script>
+  </body>
+</html>

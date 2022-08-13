@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Creating and filling arrays methods in java script</h1>
+    <p>
+      In this lecture we learn how we creat and fill arrays dynamically. we
+      learn the <br />
+      new methods of creation of arrays . lets see
+    </p>
+    <script>
+      // we have already data
+      let y = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      console.log(new Array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+      // we also create the arrays programicall
+      let x = new Array(7);
+      // create 7 digit length empty array
+
+      console.log(x);
+      x.fill(1);
+      console.log(x);
+      let s = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      x.fill(s);
+      console.log(x);
+      // fill array by index size
+      x.fill(2, 2, 5);
+      console.log(x);
+      // we fill others arrays
+      y.fill(23, 3, 12);
+      console.log(y);
+
+      // ARRAY .FROM FUNCTIONS
+      let ss = Array.from({ length: 7 }, () => 1);
+      console.log(ss);
+      let z = Array.from({ length: 8 }, (cur, i) => i + 1);
+      console.log(z);
+      let q = Array.from({ length: 9 }, (_, i) => (i + 1) * 2);
+      console.log(q);
+      // for example
+      console.log("100 dice rolls for this game ");
+      let diceRols = Array.from({ length: 100 }, (_, i) => {
+        let rand = Math.trunc(Math.random() * i + 1) + 1;
+        return rand;
+      });
+      console.log(...diceRols);
+      // more Real usecase
+      // let collect data and make arrays from Dom
+      // working in bankist app
+      // arrays from methods
+      let movementsUi = Array.from(
+        document.querySelectorAll(".movements__value")
+      );
+      console.log(movementsUi);
+      // real values or clcikc on the lavbel balance
+      labelBalance.addEventListener("click", function () {
+        let movementsUi = Array.from(
+          document.querySelectorAll(".movements__value")
+        );
+        console.log(movementsUi);
+        let texts = movementsUi.map((el) => Number(el.textContent.slice(0, 2)));
+        console.log(texts);
+      });
+      // map methods is work on it
+    </script>
+  </body>
+</html>
