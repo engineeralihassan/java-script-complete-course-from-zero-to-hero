@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Remainder operater in java script</h1>
+    <script>
+      console.log(5 % 2);
+      console.log(5 / 2);
+      console.log(8 % 3);
+      console.log(8 % 2);
+      console.log(8 / 2);
+      let num, num1;
+      num = +prompt("Enter number");
+      num1 = +prompt("enter number 2");
+      console.log(num);
+      if (num % num1 === 0) {
+        console.log("This is divisible");
+      } else {
+        console.log("This is not divisible");
+      }
+      // example\
+      // dddd
+      labelBalance.addEventListener("click", function () {
+        [...document.querySelectorAll(".movements__row")].forEach(function (
+          row,
+          i
+        ) {
+          if (i % 2 === 0) {
+            row.style.backgroundColor = "orange";
+          } else if (i % 3 === 0) {
+            row.style.backgroundColor = "blue";
+          } else {
+            row.style.backgroundColor = "red";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

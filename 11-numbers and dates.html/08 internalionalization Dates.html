@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Internationalization Dates</h1>
+    <p>
+      java script has a internationalization Api in which we create the and work
+      with many languages .
+    </p>
+    <script>
+      const now = new Date();
+      labelDate.textContent = new Intl.DateTimeFormat("en-GB").format(now);
+      const now1 = new Date();
+      labelDate.textContent = new Intl.DateTimeFormat("en-us").format(now);
+      const now2 = new Date();
+      labelDate.textContent = new Intl.DateTimeFormat("ar-SY").format(now);
+      // options object
+      let optionsobj = {
+        hour: "numeric",
+        minute: "numeric",
+        day: "numeric",
+        month: "long",
+        // month: "2-digit",
+        year: "2-digit",
+        weekday: "long",
+      };
+      const now5 = new Date();
+      const local = navigator.language;
+      console.log(local);
+      labelDate.textContent = new Intl.DateTimeFormat(local, optionsobj).format(
+        now
+      );
+    </script>
+  </body>
+</html>

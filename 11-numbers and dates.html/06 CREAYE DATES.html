@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Creaye Dates in java script</h1>
+    <p>
+      The dates are also widely used object in websites . there the 4 ways
+      <br />
+      of creating dates in java script new date constructor functions.
+    </p>
+    <script>
+      // let date constructors
+      let now = new Date();
+      console.log(now);
+      console.log(new Date("Fri Aug 12 2022 "));
+      console.log(new Date("october 12,2002 "));
+      // passing strings
+      // console.log(new Date(account1.movementDates[0]));
+      console.log(new Date(2037, 0, 19, 15, 5));
+      console.log(new Date(2037, 10, 33, 15, 5));
+      // pass millisecnds
+      console.log(new Date(0));
+      console.log(new Date(999999999999));
+      console.log(new Date(3 * 24 * 60 * 60 * 1000));
+      // special objects dates
+      let future = new Date(2037, 10, 19, 23);
+      console.log(future);
+      console.log(future.getFullYear());
+      console.log(future.getDate());
+      console.log(future.getDay());
+      console.log(future.getHours());
+      console.log(future.getMinutes());
+      console.log(future.getSeconds());
+      console.log(future.getMilliseconds());
+      console.log("time is", future.getTime());
+      console.log(future.getUTCDate());
+      // strings
+      console.log(future.toISOString());
+      console.log(future.toDateString());
+      console.log(future.toLocaleDateString());
+      console.log(future.toISOString());
+      console.log(future);
+      console.log(Date.now());
+      console.log(new Date(1660362255220));
+      // set tdates and times
+      future.setFullYear(2056);
+      console.log(future);
+    </script>
+  </body>
+</html>

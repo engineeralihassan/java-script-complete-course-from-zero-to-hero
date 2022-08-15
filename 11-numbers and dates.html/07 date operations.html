@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Date operations in java script</h1>
+    <p>
+      we see the the date and convert it into numbers and also <br />
+      perform some operations on dates obejct to simpley fy it
+    </p>
+
+    <script>
+      // Dates into Numbers
+      let future = new Date(2067, 10, 12);
+      let future1 = new Date(2022, 10, 12);
+      console.log(+future);
+      let dayspass = (date, date1) => (date1 - date) / (1000 * 60 * 60 * 24);
+      console.log(dayspass(future1, future));
+      console.log(45 * 365);
+      // into seconds
+
+      let hoursspass = (date, date1) =>
+        Math.abs(date1 - date) / (1000 * 60 * 60);
+      console.log(hoursspass(future1, future));
+      console.log(45 * 365);
+      // into mints{}
+      let mintspass = (date, date1) => (date1 - date) / (1000 * 60);
+      console.log(mintspass(future1, future));
+      // into mints{}
+      let secspass = (date, date1) => (date1 - date) / 1000;
+      console.log(secspass(future1, future));
+    </script>
+  </body>
+</html>

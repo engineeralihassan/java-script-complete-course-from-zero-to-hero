@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Timers in java script</h1>
+    <p>
+      There are 2 types of java script timers . 1 is run once in a given time
+      <br />
+      and other is continousely run and stop when we want to stop .
+    </p>
+    <script>
+      // timers in js
+      setTimeout(() => console.log("Here is your pizza 🧑"), 3000);
+      console.log("waiting....");
+      // passing arguments to ths
+      setTimeout(
+        (ing1, ing2) => {
+          console.log(
+            "This is your pissa with",
+            `${ing1} 
+            and ${ing2}`
+          );
+        },
+        2000,
+        "chees",
+        "Chicken"
+      );
+      let now = new Date();
+      let mins = now.getMinutes;
+      setTimeout(() => {
+        let now2 = new Date();
+        console.log(now2.getMinutes(), ":", now2.getSeconds());
+      }, 4000);
+
+      // we also cancel this function running befor the time passdd
+      let ings = ["Chicken", "Raddish", "Chees", "Souces", "Mutton"];
+      let timer = setTimeout(
+        (args) => {
+          console.log(`You pizza is made of : These ingredients
+      ${[...args]} ${args[0]}`);
+        },
+        5000,
+        [...ings]
+      );
+      if (ings.includes("Chicken")) clearTimeout(timer);
+
+      // set intervals functions
+      setInterval(function () {
+        let now = new Date();
+        console.log(now.getSeconds());
+      }, 1000);
+    </script>
+  </body>
+</html>
