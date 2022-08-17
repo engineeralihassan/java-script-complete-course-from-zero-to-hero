@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Java script Event Buubling,propagation and capturing</h1>
+    <section>
+      <p>A paragraph with a <a href="">link</a></p>
+      <p>Asecond para graph</p>
+    </section>
+    <section>
+      <img src="01.Bankist webb/img/digital.jpg" alt="" />
+    </section>
+    <p>
+      when the click event on the a tag its not happening in the a tg its happen
+      in the top of the document . root
+      <br />
+      then its finfd the target place its called capturing event <br />
+    </p>
+    <script>
+      document.querySelector("a").addEventListener("click", () => {
+        alert("you clcik me");
+      });
+      // event bubbling and propgations
+      //lets create random color
+      //     rgba(255,255,255,255)
+      let randomInt = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1) + min);
+      console.log(randomInt(0, 45));
+      const randomColor = () =>
+        `rgb(${randomInt(0, 255)},${randomInt(0, 255)},
+        ${randomInt(0, 255)})`;
+      console.log(randomColor(0, 255));
+    </script>
+  </body>
+</html>
