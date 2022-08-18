@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <h1>
+          When
+          <!-- Green highlight effect -->
+          <span class="highlight">banking</span>
+          meets<br />
+          <span class="highlight">minimalist</span>
+        </h1>
+        <h4>A simpler banking experience for a simpler life.</h4>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <img
+          src="img/hero.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        />
+      </div>
+    </header>
+    <div class="main">
+      <h1>Event traversing in js <span>Dom manipolation</span></h1>
+      <h2>
+        This is the sub heading of
+        <a href="https:www.google.com">click to go google</a> the main div
+      </h2>
+    </div>
+
+    <script>
+      // passing arguments
+      // fadeout all the exceptions links tabs and logo
+      let nav = document.querySelector(".nav");
+      // creating new functions for these all
+      let makevisible = function (e) {
+        if (e.target.classList.contains("nav__link")) {
+          let link = e.target;
+          let otherlinks = link.closest(".nav").querySelectorAll(".nav__link");
+          let logo = link.closest(".nav").querySelector("img");
+          otherlinks.forEach((element) => {
+            if (element !== link) {
+              //   element.style.opacity = opac;
+              element.style.opacity = this;
+            }
+          });
+          //   logo.style.opacity = opac;
+          logo.style.opacity = this;
+        }
+      };
+      // nav.addEventListener("mouseover", (e) => {
+      //   makevisible(e, 0.5);
+      // });
+      // nav.addEventListener("mouseout", (e) => {
+      //   makevisible(e, 1);
+      nav.addEventListener("mouseover", makevisible.bind(0.5));
+      nav.addEventListener("mouseout", makevisible.bind(1));
+    </script>
+  </body>
+</html>
