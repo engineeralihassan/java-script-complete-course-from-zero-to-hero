@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Prototypal inheritance on Built in Objects</h1>
+    <p></p>
+    <script>
+      const Person = function (firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+        this.age = 2022 - birthYear;
+        //   lets see about the methods
+        //   this.calcage = function () {
+        //     console.log(this.age);
+        //   };
+      };
+      // new operatore and make constructore
+      let ali = new Person("AliHassan", 2002);
+      console.log(ali);
+      let { firstName, birthYear, age } = ali;
+      console.log(firstName);
+
+      let danish = new Person("Danish Riaz", 2000);
+      console.log(danish);
+      // now we can make the instances of the person constructors in js
+      console.log("The instance of the person constructor object");
+      // let Person: typeof Person;
+      console.log(Person.prototype);
+      Person.prototype.calcage = function () {
+        console.log(this.age);
+      };
+      Person.prototype.temp = "90 celciuse";
+
+      ali.calcage();
+      console.log(Person);
+
+      console.log(ali.temp);
+      console.log(ali.hasOwnProperty("age"));
+      console.log(ali.hasOwnProperty("temp"));
+
+      // Person in not contains this calcAge method its only prototypal i heritance
+      danish.calcage();
+      console.log(Person.prototype.isPrototypeOf(ali));
+      console.log(Person.prototype.isPrototypeOf(danish));
+      console.log(Person.prototype.isPrototypeOf(Person));
+      // PROTOTYPAL INHERITANCE
+      console.log(ali.__proto__); //=prtotypeofPerson
+      console.log(ali.__proto__.__proto__); //=object.prototype
+      console.log(ali.__proto__.__proto__.__proto__); // =prototypeOfObject
+      console.dir(Person.prototype.constructor);
+      // let see the protypes in builtin object like arrays functions
+      let arr = [1, 3, 4, 5, 3, 4, 3, 4, 6, 7, 8, 5, 6, 7, 8];
+      console.log(arr.__proto__);
+      console.log(arr.__proto__ === Array.prototype);
+      // let meake new mathods
+      Array.prototype.unique = function () {
+        return [...new Set(this)];
+      };
+      console.log(arr.unique());
+      let h1 = document.querySelector("h1");
+      console.log(h1);
+      console.dir(h1);
+    </script>
+  </body>
+</html>

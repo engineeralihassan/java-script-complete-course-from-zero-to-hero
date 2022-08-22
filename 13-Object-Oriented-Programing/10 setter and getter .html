@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Setter and getter function in classes in OOP</h1>
+    <p>
+      setter and getter functions are the class methods that is used to set and
+      get the value to the <br />
+      properties of the class . they still look the normal property
+    </p>
+    <script>
+      // getter setter example objects
+
+      let acount = {
+        owner: "Ali",
+        movements: [12, 34, -45, -45, 45, 67, 89],
+        acc: this.owner,
+        get latest() {
+          return this.movements.slice(-1).pop();
+        },
+        //   set latest(move) {
+        //     this.movements.push(move);
+        //   },
+      };
+      console.log(acount.latest);
+      acount.latest = 456;
+      console.log(acount.movements);
+      console.log(acount.acc);
+      // example setter getter for classes
+      class Person1 {
+        // add constructor methods
+        constructor(firstName, year) {
+          this.firstName = firstName;
+          this.year = year;
+        }
+        //   methods will be added in the prototype in the class
+
+        calcAge() {
+          console.log(2022 - this.year);
+        }
+        get age() {
+          return 2022 - this.year;
+        }
+        set firstName(name) {
+          if (name.includes(" ")) {
+            this.firstName = name;
+          } else {
+            alert("This is not full name");
+          }
+        }
+      }
+      let ali = new Person1("Ali Hassan", 2002);
+
+      console.log(ali);
+      ali.calcAge();
+      // create prototype methods
+      Person1.prototype.greet = function () {
+        console.log(`Hello ${this.firstName} Good morning`);
+      };
+      ali.greet();
+      console.log(ali.age);
+      // these setter and getter are the mosly used in the data validation
+      //     letds do valid dat for name
+      let obj = new Person1("Husnain Rabbani", 1999);
+      console.log(obj.firstName, obj.age);
+    </script>
+  </body>
+</html>

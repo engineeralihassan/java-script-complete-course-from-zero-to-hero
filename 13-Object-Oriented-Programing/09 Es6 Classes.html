@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>ES6 Classes in java script</h1>
+    <p>
+      we already talk about that the classes in java script is not work
+      according to the other traditional classes like other <br />
+      c++,java programing language classes . classes are like functions behind
+      the scen in java script
+    </p>
+
+    <script>
+      // classes expression
+      let Personcl = class {};
+      // class declaration
+      class Person1 {
+        // add constructor methods
+        constructor(firstName, year) {
+          this.firstName = firstName;
+          this.year = year;
+        }
+        //   methods will be added in the prototype in the class
+
+        calcAge() {
+          console.log(2022 - this.year);
+        }
+      }
+      let ali = new Person1("Ali Hassan", 2002);
+
+      console.log(ali);
+      ali.calcAge();
+      // create prototype methods
+      Person1.prototype.greet = function () {
+        console.log(`Hello ${this.firstName} Good morning`);
+      };
+      ali.greet();
+
+      // classes are not hoisted
+      //classes are first class citzens
+      // we pass into function and also return
+      // classes are execute in the scrict mode
+    </script>
+  </body>
+</html>

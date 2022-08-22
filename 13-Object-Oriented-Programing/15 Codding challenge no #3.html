@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Coding challenge # 3</h1>
+    <script>
+      let Car = function (speed, make) {
+        this.speed = speed;
+        this.make = make;
+      };
+
+      Car.prototype.accelrate = function () {
+        this.speed += 10;
+        console.log(`The ${this.make} is going on ${this.speed} KMH`);
+      };
+      Car.prototype.breake = function () {
+        this.speed -= 5;
+        console.log(`The ${this.make} is going on ${this.speed} KMH`);
+      };
+
+      let ECar = function (speed, make, charge) {
+        Car.call(this, speed, make);
+        this.charge = charge;
+      };
+      ECar.prototype = Object.create(Car.prototype);
+      let tesla = new ECar(120, "Tesla", 23);
+      console.log(tesla);
+
+      // let chargeTo=function(){
+
+      // }
+      ECar.prototype.ChargeBattrey = function (chargeTo) {
+        this.charge = chargeTo;
+      };
+
+      ECar.prototype.accelrate = function () {
+        this.speed += 20;
+        this.charge--;
+        console.log(`The ${this.make} is going at ${this.speed}
+            Km/h, with a charge of ${this.charge}`);
+      };
+      tesla.ChargeBattrey(89);
+
+      console.log(tesla);
+      console.log(tesla.speed);
+
+      tesla.breake();
+      tesla.accelrate();
+    </script>
+  </body>
+</html>

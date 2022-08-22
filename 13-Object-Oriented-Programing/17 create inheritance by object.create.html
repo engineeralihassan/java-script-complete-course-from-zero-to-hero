@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Create inheritance by object .create methods</h1>
+    <script>
+      let personProto = {
+        calcAge() {
+          console.log(2037 - this.birthyear);
+        },
+        init(firstName, birthyear) {
+          this.firstName = firstName;
+          this.birthyear = birthyear;
+        },
+      };
+      let ali = Object.create(personProto);
+      console.log(ali);
+      // lets create an other student proto from person
+      let Studentproto = Object.create(personProto);
+      let ans = Object.create(Studentproto);
+      console.log(ans);
+      console.log(Studentproto);
+      // letcs reate the another init functon for student 3 arguments
+      Studentproto.init = function (firstName, birthyear, course) {
+        personProto.init.call(this, firstName, birthyear);
+        this.course = course;
+      };
+      ans.init("Anas", 2002, "computer science");
+    </script>
+  </body>
+</html>

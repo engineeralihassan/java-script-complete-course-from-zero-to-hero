@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Constructure functions and the new operator</h1>
+    <p>
+      In object oriented programming the object is make from the class and its
+      called instance .we didnot technically create a class yet.
+    </p>
+    <script>
+      // let al = "Ali";
+
+      const Person = function (firstName, birthYear) {
+        //   console.log(this); //return empty object
+        //instance properties
+
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+        this.age = 2022 - birthYear;
+        //   lets see about the methods
+        let f = this;
+        // this is not  goor way
+        //   this.calcAge = function () {
+        //     console.log(this.age);
+        //     let info = () => {
+        //       return `This is "${this.firstName}" profile
+        //       and his age is ${this.age}`;
+        //     };
+        //     console.log(info());
+        //   };
+      };
+      // new operatore and make constructore
+      let ali = new Person("AliHassan", 2002);
+      // When we use the new operator its do 4 things
+      //1-make new object empty
+      // 2-call the function and set this = {} //this object
+      //3-linked to prototyped
+      //4-function automaticall return
+
+      console.log(ali);
+      let { firstName, birthYear, age } = ali;
+      console.log(firstName);
+      let danish = new Person("Danish Riaz");
+      console.log(danish);
+      // now we can make the instances of the person constructors in js
+      console.log("The instance of the person constructor object");
+
+      let tania = new Person("Tania Hashim", 2002);
+      console.log(tania);
+      console.log(ali instanceof Person);
+      console.log(tania instanceof Person);
+      let j = "jay";
+      console.log(j instanceof Person);
+      // these are all instance properties in thes object
+      console.log(ali.age);
+      console.log(tania.firstName);
+      console.log("Instance methods");
+      // ali.calcAge();
+      console.log(
+        "Instence methods is not a good things so we use the prototypes "
+      );
+      // lets see about the methods
+    </script>
+  </body>
+</html>

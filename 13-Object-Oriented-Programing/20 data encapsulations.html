@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>data encapsulations in the</h1>
+    <p>
+      we see the data privacy and protection in oop we see the which data is
+      private and protected . its prevent class data . in the java script there
+      is no officially anithing that makes data protection. we only make this
+      just imagination by _ sign .
+    </p>
+    <script>
+      // Encapsulations
+      class Account {
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this.pin = pin;
+          this._movements = [];
+          this.local = navigator.language;
+          console.log(`this for opening an account ${owner}`);
+        }
+        //   methods
+        //   best way to protect them my make methods
+        getMovements() {
+          console.log(this._movements);
+        }
+        deposits(val) {
+          this._movements.push(val);
+        }
+        withdraw(val) {
+          this._movements.push(-val);
+        }
+      }
+      let acc1 = new Account("Ali", "EUR", 1111);
+      acc1.getMovements();
+      console.log(acc1);
+    </script>
+  </body>
+</html>

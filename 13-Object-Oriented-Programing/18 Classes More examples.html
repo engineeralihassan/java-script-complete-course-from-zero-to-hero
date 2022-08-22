@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Clases more Examples in java script</h1>
+    <script>
+      // Classes more Examples
+      class Account {
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this.pin = pin;
+          this.movements = [];
+          this.local = navigator.language;
+          console.log(`this for opening an account ${owner}`);
+        }
+        //   methods
+        deposits(val) {
+          this.movements.push(val);
+        }
+        withdraw(val) {
+          this.movements.push(-val);
+        }
+      }
+      let acc1 = new Account("Ali", "US-Dollars", 1111);
+      console.log(acc1.owner);
+      console.log(acc1);
+      // this is not good vay to add deposits and widthdrwls
+      acc1.movements.push(250);
+      acc1.movements.push(140);
+      acc1.movements.push(-245);
+      console.log(acc1.movements);
+      acc1.deposits(2345);
+      acc1.deposits(1234567);
+      acc1.withdraw(12345);
+      console.log(acc1.movements);
+    </script>
+  </body>
+</html>

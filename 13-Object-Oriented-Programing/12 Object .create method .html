@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Object.create method in java script</h1>
+    <p>
+      this is the third way to create thw prtotypal i jheritance in the java
+      script oop
+    </p>
+    <script>
+      // object .create
+      // this is no new operator
+      // no constructors
+      // we set manuallt the prototype to the objects
+      // that we want an
+      let PersonProto = {
+        name: "Ali Hassan",
+        year: 2002,
+        clacAge() {
+          console.log(2022 - this.year);
+          return 2022 - this.year;
+        },
+        init() {
+          console.log("Init functions start *******");
+          console.log(this.name);
+          let c = this.clacAge();
+          console.log("Age is ", c);
+        },
+      };
+      let ali = Object.create(PersonProto);
+      console.log(ali);
+      ali.name = PersonProto.name;
+      ali.year = PersonProto.year;
+      console.log(ali);
+      ali.clacAge();
+      // prototypes work as same as the classs and constructor functiiobs
+
+      console.log(ali.__proto__);
+      console.log(PersonProto.__proto__);
+      console.log(PersonProto.__proto__.__proto__);
+      let ans = Object.create(PersonProto);
+
+      ans.init();
+    </script>
+  </body>
+</html>

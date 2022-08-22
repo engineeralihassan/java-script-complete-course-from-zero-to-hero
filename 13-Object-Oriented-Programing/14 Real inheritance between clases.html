@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>REal Inheritance between classes .</h1>
+    <p>
+      we use the prptotypal inheritance and many more things in the previouse
+      lectures . now we use this <br />
+      we use the inheritance real meaning and use the inheritance between
+      classes in java script OOP
+    </p>
+    <script>
+      // inheritance between the tow diffrent constructor functions
+      // Person constructor functions
+      const Person = function (name, birthday) {
+        this.name = name;
+        this.birthday = birthday;
+      };
+      Person.prototype.CalcAge = function () {
+        console.log(2022 - this.birthday);
+      };
+      const Student = function (firstName, birthday, couse) {
+        //   this.firstName = firstName;
+        //   this.birthday = birthday;
+        // the above code is same in the Persons object so we dont this
+        // code again we reuse the code
+        // Person(firstName,birthday); //this an eror becuase its un defined we not use the new operator
+        // we use this as
+        Person.call(this, firstName, birthday);
+
+        this.couse = couse;
+      };
+
+      Student.prototype = Object.create(Person.prototype);
+      // this is create new object and inherit this person in this objet
+      //  Student.prototype=Person.prototype
+      // this is wrong becuase this is same object when student is change person is also changes
+
+      //linkng prototypes
+
+      Student.prototype.intru = function () {
+        console.log(`My name is ${this.firstName} and I'm born in ${this.birthday}
+            and my course is ${this.couse}`);
+      };
+      let p1 = new Person("Ahsan", 2002);
+
+      console.log(p1);
+
+      let ali = new Student("Ali", 2002, "Softwere-Enginnering");
+      console.log(ali);
+      ali.intru();
+      ali.CalcAge();
+      console.log(ali.__proto__);
+      console.log(ali.__proto__.__proto__);
+      console.log(ali instanceof Student);
+      console.log(ali instanceof Person);
+      console.log(ali instanceof Object);
+      // let the change the prototype
+      console.log("////////////////////////////////");
+      Student.prototype.constructor = Student;
+      console.log(Student.prototype.constructor);
+      let husnain = new Student("Husnain", 1999, "BSCS");
+      console.log(husnain);
+      husnain.CalcAge();
+
+      //
+    </script>
+  </body>
+</html>

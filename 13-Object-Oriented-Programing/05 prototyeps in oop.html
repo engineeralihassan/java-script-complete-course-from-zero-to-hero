@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Prototypes in java script OOP</h1>
+    <p>
+      its called prototypes ,prototypal inheritance, and Delegation . how it
+      works we see. each function <br />
+
+      in java script has alreDY A property called prototype.
+    </p>
+
+    <script>
+      //// let al = "Ali";
+
+      const Person = function (firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+        this.age = 2022 - birthYear;
+        //   lets see about the methods
+        //   this.calcage = function () {
+        //     console.log(this.age);
+        //   };
+      };
+      // new operatore and make constructore
+      let ali = new Person("AliHassan", 2002);
+      console.log(ali);
+      let { firstName, birthYear, age } = ali;
+      console.log(firstName);
+
+      let danish = new Person("Danish Riaz", 2000);
+      console.log(danish);
+      // now we can make the instances of the person constructors in js
+      console.log("The instance of the person constructor object");
+      // let Person: typeof Person;
+      console.log(Person.prototype);
+      Person.prototype.calcage = function () {
+        console.log(this.age);
+      };
+      Person.prototype.temp = "90 celciuse";
+
+      ali.calcage();
+      console.log(Person);
+
+      console.log(ali.temp);
+      console.log(ali.hasOwnProperty("age"));
+      console.log(ali.hasOwnProperty("temp"));
+
+      // Person in not contains this calcAge method its only prototypal i heritance
+      danish.calcage();
+      console.log(Person.prototype.isPrototypeOf(ali));
+      console.log(Person.prototype.isPrototypeOf(danish));
+      console.log(Person.prototype.isPrototypeOf(Person));
+    </script>
+  </body>
+</html>

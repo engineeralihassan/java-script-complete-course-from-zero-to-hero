@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>Truely Private Class Fields and Methods in java script</h1>
+    <p></p>
+    <script>
+      // this is the truely class fields and methods
+      // Encapsulations
+      class Account {
+        // public fields
+        //   _movements = [];
+        local = navigator.language;
+        //   private fields we could not see this outside the class
+        #movements = [12, 34, 5, 6, 7, 8, 9];
+        #pin; //declaire undefined properties
+
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this.#pin = pin;
+          //     this._movements = [];
+          //     this.local = navigator.language;
+          console.log(`this for opening an account ${owner}`);
+        }
+        //   methods
+        //   best way to protect them my make methods
+        getMovements() {
+          console.log(this.#movements);
+        }
+        deposits(val) {
+          this.#movements.push(val);
+        }
+        withdraw(val) {
+          this.#movements.push(-val);
+        }
+        //   private methods
+        #approaveloan(val) {
+          return true;
+        }
+        requestloan() {
+          let val = 12;
+          if (this.#approaveloan(val)) {
+            this.deposits(val);
+            console.log("loan approved");
+          }
+        }
+        static helper() {
+          console.log("This is an Helper functions");
+        }
+      }
+      let acc1 = new Account("Ali", "EUR", 1111);
+      acc1.getMovements();
+      console.log(acc1);
+      // console.log(acc1.#movements); /// this is an error private fields
+      acc1.requestloan();
+      Account.helper();
+    </script>
+  </body>
+</html>

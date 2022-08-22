@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>static methods in java script oop</h1>
+    <p>
+      This is like the functions which attach to the constructor not to the
+      prototype the best example of the <br />
+      static methods are the Array.from() methods .which only attach to the
+      array constructor but not use in the array <br />
+      other methods
+    </p>
+    <script>
+      // static methds
+      console.log(Array.from(document.querySelectorAll("h1")));
+      // another constructor method
+      console.log(Number.parseFloat(123.456789));
+      // for constructor functipns
+      let Person = function (n1, n2) {
+        this.name = n1;
+        this.name1 = n2;
+        console.log(this.name);
+        console.log(this.name1);
+
+        console.log(n1);
+        console.log(n2);
+      };
+      let ali = new Person("Ali Hassan", " Softwere-Enginner");
+      Person.prototype.degree = function () {
+        console.log(this.name1);
+      };
+      console.log("Ali ", ali);
+      ali.degree();
+      // static method for constructor functions
+      Person.hy = function () {
+        console.log("Hello mr ali hassan");
+
+        console.log(this);
+      };
+      Person.hy();
+      // For Classes
+      class Person1 {
+        // add constructor methods
+        constructor(firstName, year) {
+          this.firstName = firstName;
+          this.year = year;
+        }
+        //   methods will be added in the prototype in the class
+
+        calcAge() {
+          console.log(2022 - this.year);
+        }
+        get age() {
+          return 2022 - this.year;
+        }
+        set firstName(name) {
+          if (name.includes(" ")) {
+            this.firstName = name;
+          } else {
+            alert("This is not full name");
+          }
+        }
+        static hy = function () {
+          console.log("Hello mr ali hassan");
+
+          console.log(this);
+        };
+      }
+      let ali1 = new Person1("Ali Hassan", 2002);
+    </script>
+  </body>
+</html>
