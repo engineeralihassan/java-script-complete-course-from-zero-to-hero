@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Managing work out Data from the users form</h1>
+    <p>
+      in this lecture we handle the work out data from the users to handle the
+      preview of the data
+    </p>
+    <script>
+      // ************************************************************************************************88888888
+      // WORKOUT CLASS
+      class Workout {
+        date = new Date();
+        id = (Date.now() + "").slice(-10);
+
+        constructor(coords, distance, duration) {
+          // this.date=...
+          //  this.id=...
+          this.coords = coords;
+          this.distance = distance;
+          this.duration = duration;
+        }
+      }
+      // ///////////////////////////////////
+      // RUNNING CLASS
+      class Running extends Workout {
+        constructor(coords, distance, duration, cadence) {
+          super(coords, distance, duration);
+          this.cadence = cadence;
+          this.calcPace();
+        }
+        calcPace() {
+          // min/km
+          this.pace = this.duration / this.distance;
+          return this.pace;
+        }
+      }
+      // ///////////////////////////////////
+      // CYCLING  CLASS
+      class Cycling extends Workout {
+        constructor(coords, distance, duration, elevationGain) {
+          super(coords, distance, duration);
+          this.elevationGain = elevationGain;
+          this.calcspeed();
+        }
+        calcspeed() {
+          //KMH
+          this.speed = this.distance / (this.duration / 60);
+          return this.speed;
+        }
+      }
+
+      // let run = new Running([39, -29], 5.2, 24, 178);
+      // let cycle = new Cycling([39, -29], 27, 95, 523);
+      // console.log(run, cycle);
+    </script>
+  </body>
+</html>
