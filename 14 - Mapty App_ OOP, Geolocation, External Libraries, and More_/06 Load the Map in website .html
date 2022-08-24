@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Loabd the Map in Web using third party script</h1>
+    <p>
+      in this lecture we learn how we show and load a google map location in our
+      web page through the <br />
+      third party script code and show google map on our web this third party is
+      callled the <strong> <b>LeafLet</b> </strong>
+    </p>
+    <p>
+      we use the leaflet library and dounload it in our page and the use it . //
+      lets show the map on our web page <br />
+      // copy the leaflet page and put this lik befor our script in the index
+      page of out side
+    </p>
+    <p>
+      then goback to overview page and see the functions of the leatlet that we
+      can use to load map .. <br />
+      copt thes function and then put it in to the your oe=wn web
+    </p>
+    <p>
+      after past the code function of leaflet we have see the probleme the
+      probleme is that we could not the the <br />
+      variable scope ang globlalization in multiple scripts . so we see thet the
+      2 links of script in index we add one more
+    </p>
+    <script>
+      // // lets show the map on our web page
+      // copy the leaflet page and put this lik befor our script in the index page of out side
+      // we use the defer attruiburt ein this script link
+      //other is for error
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            // position object has many properties like latitude and longitude speed
+            // we get the latiturde and longiture
+            // let latitude = position.coords.latitude;
+            let { latitude, longitude } = position.coords;
+            console.log(latitude, longitude);
+            // console.log(position);
+            // we curently create a google map link
+            // make a link
+            //  console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+            // lets show the map on our web page
+            // copy the leaflet page and put this lik befor our script in the index page of out side
+            // leaflet function we use
+
+            // let map = L.map('map').setView([51.505, -0.09], 13); //l.map function accept the agruments id name
+            //  of the element wher we want to show the map
+            // setview methids take argumenrs we give our oun longiture latitire
+            let cords = [latitude, longitude];
+            //   let map = L.map('map').setView(cords, 15,34,5,6,7,8); we change the number 13 by any number
+            let map = L.map("map").setView(cords, 13);
+            // this map is becuase of little tiles this is usedthe openstreemap
+            // leaflet also used other maps like google maps
+            // we also change the shap of the maps in the web
+            // lets change the shap od the map
+
+            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer(
+              "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+              {
+                attribution:
+                  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              }
+            ).addTo(map);
+
+            // L.marker([51.5, -0.09])
+            L.marker(cords)
+              .addTo(map)
+              .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+              .openPopup();
+          },
+          function () {
+            alert("this is not fetch the current location");
+          }
+        );
+      }
+      console.log(na);
+    </script>
+  </body>
+</html>

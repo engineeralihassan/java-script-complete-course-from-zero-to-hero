@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <h1>Set the message pop up on hover every location in map market</h1>
+    <p>
+      we could not add event on the map we couldnot know where we click on the
+      maps. thats why we <br />
+      use the leaflet map object to handle thses events . we see that the map
+      object ha smany properties <br />
+      and we see the on method on this in the prototypes chaining let
+      console.log(map);
+    </p>
+    <div id="map"></div>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            alert("successfull");
+
+            let { latitude, longitude } = position.coords;
+            console.log(latitude, longitude);
+
+            let cords = [latitude, longitude];
+
+            let map = L.map("map").setView(cords, 13);
+            console.log(map);
+
+            L.tileLayer(
+              "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+              {
+                attribution:
+                  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              }
+            ).addTo(map);
+
+            L.marker([lat, lng])
+              .addTo(map)
+              .bindPopup(
+                L.popup({
+                  maxWidth: 250,
+                  minWidth: 100,
+                  autoClose: false,
+                  closeOnClick: false,
+                  className: "running-popup",
+                })
+              )
+              .setPopupContent("WorkOut")
+              .openPopup();
+          },
+          function () {
+            alert("this is not fetch the current location");
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
