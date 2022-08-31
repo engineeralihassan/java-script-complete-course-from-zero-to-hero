@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>returning all promises in parallel</h1>
+    <script>
+      ///////////////////////////////////////
+      // Running Promises in Parallel
+
+      const get3Countries = async function (c1, c2, c3) {
+        try {
+          const data1 = await fetch(
+            `https://restcountries.com/v3.1/name/${c1}`
+          );
+          let s = data1.json();
+          console.log(s);
+          const data2 = await fetch(
+            `https://restcountries.com/v3.1/name/${c2}`
+          );
+          let s2 = data2.json();
+          console.log(s2);
+          const data3 = await fetch(
+            `https://restcountries.com/v3.1/name/${c3}`
+          );
+          let s1 = data3.json();
+          console.log(s1);
+          let se = await s2.then(res => console.log(res));
+          let se1 = await s1.then(res => console.log(res));
+          let se2 = await s.then(res => console.log(res));
+
+          console.log([se1, se2, se]);
+
+          //     const data = await Promise.all([
+          //       getJSON(`https://restcountries.eu/rest/v2/name/${c1}`),
+          //       getJSON(`https://restcountries.eu/rest/v2/name/${c2}`),
+          //       getJSON(`https://restcountries.eu/rest/v2/name/${c3}`),
+          //     ]);
+          //     console.log(data.map(d => d[0].capital));
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      get3Countries('portugal', 'canada', 'tanzania');
+    </script>
+  </body>
+</html>

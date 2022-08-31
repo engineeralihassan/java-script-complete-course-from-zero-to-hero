@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>First Ajax call in java script</h1>
+    XML hhpt request functions
+    <h1>Public Apis</h1>
+    <p>
+      on the githuh there is an acount which have 89k Public Apis we search or
+      gogle public-apis . we use there apis which have cors and https yes. we
+      use the Rest countries Api .
+    </p>
+    <script>
+      // old school way befor the 1ajax call
+      // this is the old scool way of doing ajax in js
+      // FIRST API CALL
+
+      // let request = new XMLHttpRequest();
+
+      // request.open('GET', 'https://restcountries.com/v3.1/all');
+      // request.send();
+      // request.addEventListener('load', function () {
+      //   console.log(this.responseText);
+      // });
+
+      // single country name Api
+      let req = new XMLHttpRequest();
+      req.open('GET', 'https://restcountries.com/v3.1/name/pakistan');
+      req.send();
+      req.addEventListener('load', function () {
+        // console.log(this.responseText);
+        // convert this into real data
+        // let data = JSON.parse(this.responseText);
+        // destructure the object array
+        let [data] = JSON.parse(this.responseText);
+        console.log(data);
+        console.log(data.population);
+        let card = `
+              <article class="country">
+          <img class="country__img" src="" />
+          <div class="country__data">
+            <h3 class="country__name">COUNTRY</h3>
+            <h4 class="country__region">REGION</h4>
+            <p class="country__row"><span>👫</span>POP people</p>
+            <p class="country__row"><span>🗣️</span>LANG</p>
+            <p class="country__row"><span>💰</span>CUR</p>
+          </div>
+        </article>
+        
+        
+        `;
+      });
+    </script>
+  </body>
+</html>

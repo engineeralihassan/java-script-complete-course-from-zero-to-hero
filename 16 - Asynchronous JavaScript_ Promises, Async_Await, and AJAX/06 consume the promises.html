@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="countries Data App/style.css" />
+    <!-- <script defer src="myscript.js"></script> -->
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="countries">
+        <h1>consume promises in java script</h1>
+        <p>
+          we assume the promise by then function methods . then methods takes a
+          call back function if the promises is full fill this function is take
+          an argument as the result of the fullfill method promise if we want to
+          read the data from the body of the promise then we called the json
+          method then finally we see the data. this json method also a promise
+          so return this json method
+        </p>
+
+        <!--
+        <article class="country">
+          <img class="country__img" src="" />
+          <div class="country__data">
+            <h3 class="country__name">COUNTRY</h3>
+            <h4 class="country__region">REGION</h4>
+            <p class="country__row"><span>👫</span>POP people</p>
+            <p class="country__row"><span>🗣️</span>LANG</p>
+            <p class="country__row"><span>💰</span>CUR</p>
+          </div>
+        </article>
+        -->
+      </div>
+      <!-- <button class="btn-country">Where am I?</button> -->
+      <div class="images"></div>
+    </main>
+    <script>
+      let showcard = function (data) {
+        let card = `
+                      <article class="country">
+                  <img class="country__img" src="${
+                    data.flags.png || data.flags.svg
+                  }" />
+                  <div class="country__data">
+                    <h3 class="country__name">${
+                      data.altSpellings[1] || data.name
+                    }</h3>
+                    <h4 class="country__region">${data.region}</h4>
+                    <p class="country__row"><span>👫</span>${(
+                      +data.population / 1000000
+                    ).toFixed(1)} people</p>
+                    <p class="country__row"><span>🗣️</span>${
+                      data.languages.urd || data.languages[0]
+                    }</p>
+                    <p class="country__row"><span>💰</span>${
+                      data.currencies.PKR.name
+                    }</p>
+                  </div>
+                </article>
+
+                `;
+        countriesContainer.insertAdjacentHTML('beforeend', card);
+        countriesContainer.style.opacity = 1;
+      };
+      // let requestData = fetch('https://restcountries.com/v3.1/name/pakistan');
+      // console.log(requestData);
+      // let countryData = function (country) {
+      //   //   asume the promises
+      //   fetch(`https://restcountries.com/v3.1/name/${country}`)
+      //     .then(function (responce) {
+      //       return responce.json();
+      //     })
+      //     .then(function (data) {
+      //       console.log(data);
+      //       let [data1] = data;
+      //       console.log(data1);
+      //       showcard(data1);
+      //     });
+      // };
+      // countryData('pakistan');
+      // /////////////////////////////////////
+      let countryData = country => {
+        //   asume the promises
+        fetch(`https://restcountries.com/v3.1/name/${country}`)
+          .then(responce => {
+            return responce.json();
+          })
+          .then(data => {
+            console.log(data);
+            let [data1] = data;
+            console.log(data1);
+            showcard(data1);
+          });
+        let neigbour = data1.borders;
+        if (!neigbour) return;
+        if (neigbour) {
+          return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
+            .then(data => {
+              return responce.json();
+            })
+            .then(data => {
+              showcard(data, 'neighbour');
+            });
+        }
+      };
+      countryData('pakistan');
+    </script>
+  </body>
+</html>

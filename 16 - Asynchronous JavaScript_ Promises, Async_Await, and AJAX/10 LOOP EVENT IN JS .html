@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>how loop event works in call backs</h1>
+    <p>in this lecture we learn about the call backs loop event</p>
+    <p>
+      in the below given condition the there ae 2 top level code console.logs
+      and then there is a timmer and a promise these are finish on the same time
+      lets see what the function is execute first
+    </p>
+    <p>
+      the answer is that the promises call backs are execute first but we think
+      normally the timer is execute first what the reason behind this the
+      promises call back are go in the mirco task que and event loop is given
+      the priority to the microtask in the call stack so thats why the promices
+      call back executes first
+    </p>
+    <p>
+      lets see the if promise take long take and the timers is not run what
+      happen seee in the code
+    </p>
+    <p>
+      The promises are execute frst and then timers are execute even the appears
+      in same creations
+    </p>
+
+    <script>
+      let date = new Date();
+      let sec = date.getSeconds();
+      let s;
+
+      console.log('test Starts');
+      setTimeout(() => console.log('0 second timer'), 0);
+      // this call back is in the call back que affter 0
+      // seconds
+      // let we see the promises
+      Promise.resolve('resolved promise 1').then(res => console.log(res));
+      Promise.resolve('The call back prmise resolver 2 ').then(res => {
+        for (i = 0; i < 300000; i++) {}
+        console.log(res);
+
+        s = Date.now();
+
+        console.log(sec, s);
+      });
+      console.log(sec, s);
+
+      console.log('Test Ends');
+    </script>
+  </body>
+</html>

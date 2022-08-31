@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>handling errors in async await with try catch</h1>
+    <p>
+      we not handle any error in the java script async await functionlike other
+      promices . so we handle the errors with try and catch .
+    </p>
+    <script>
+      // how try catch works
+      try {
+        let y = 1;
+        let r = 90;
+        const w = 45;
+        y = 45;
+        r = 45;
+        //   w = 45;
+      } catch (err) {
+        alert(err.message);
+      }
+    </script>
+  </body>
+</html>

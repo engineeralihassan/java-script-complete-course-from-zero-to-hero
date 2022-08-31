@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <h1>consuming promises with async awaite</h1>
+    <p>
+      let see the more moderen way to consuming the promises with the async
+      awaite
+    </p>
+    <p>
+      let create the wherAmI function again with the async awaite we use the
+      keyword async and await and then use the country. in the asunc function we
+      use the awaite wich give this function assyncronouse behavoire . it runs
+      is the bckground tilll the function fetch the whole data
+    </p>
+    <p>
+      the await is return a promises also . so we play this like promise . use
+      then methods and many more .
+    </p>
+    <div class="countriesContainer"></div>
+
+    <script>
+      // let see the async awaite
+      let countriesContainer = document.querySelector('.countriesContainer');
+      let showcard = function (data) {
+        console.log();
+        let card = `
+                          <article class="country">
+                      <img class="country__img" src="${
+                        data.flags.png || data.flags.svg
+                      }" />
+                      <div class="country__data">
+                        <h3 class="country__name">${
+                          data.altSpellings[1] || data.name
+                        }</h3>
+                        <h4 class="country__region">${data.region}</h4>
+                        <p class="country__row"><span>👫</span>${(
+                          +data.population / 1000000
+                        ).toFixed(1)} people</p>
+                        <p class="country__row"><span>🗣️</span>${
+                          data.languages.urd || data.languages[0]
+                        }</p>
+                        <p class="country__row"><span>💰</span>${
+                          data.currencies.PKR.name
+                        }</p>
+                      </div>
+                    </article>
+
+                    `;
+        countriesContainer.insertAdjacentHTML('beforeend', card);
+      };
+
+      let wherAmI = async function (country) {
+        let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+        console.log(res);
+        let data = await res.json();
+        console.log('Hello ali ', data);
+        showcard(data[0]);
+      };
+      wherAmI('pakistan');
+      console.log('first 1234');
+    </script>
+  </body>
+</html>
